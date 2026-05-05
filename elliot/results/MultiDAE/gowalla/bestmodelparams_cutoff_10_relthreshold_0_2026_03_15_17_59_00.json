@@ -1,0 +1,24 @@
+[
+    {
+        "default_validation_metric": "nDCG",
+        "default_validation_cutoff": 10,
+        "rel_threshold": 0
+    },
+    {
+        "meta": {
+            "save_recs": true
+        },
+        "recommender": "MultiDAE_seed=42_e=20_bs=512_intermediate_dim=600_latent_dim=200_reg_lambda=0$01_lr=0$001_dropout_pkeep=0$0",
+        "configuration": {
+            "epochs": 20,
+            "batch_size": 512,
+            "intermediate_dim": 600,
+            "latent_dim": 200,
+            "reg_lambda": 0.01,
+            "lr": 0.001,
+            "dropout_pkeep": 1,
+            "name": "MultiDAE_seed=42_e=20_bs=512_intermediate_dim=600_latent_dim=200_reg_lambda=0$01_lr=0$001_dropout_pkeep=0$0",
+            "best_iteration": 5
+        }
+    }
+]

@@ -1,0 +1,28 @@
+experiment:
+  path_output_rec_result: results/MultiDAE/gowalla/
+  path_output_rec_performance: results/MultiDAE/gowalla/
+  dataset: gowalla
+  data_config:
+    strategy: fixed
+    train_path: ../data/lightgcn/{0}/train.tsv
+    test_path: ../data/lightgcn/{0}/test.tsv
+  binarize: True
+  top_k: 50
+  evaluation:
+    cutoffs: [10, 20]
+    simple_metrics: [nDCG, Recall]
+  gpu: 0
+  external_models_path: ../external/models/__init__.py
+  models:
+    MultiDAE:
+      meta:
+        save_recs: True
+      epochs: 20
+      batch_size: 512
+      intermediate_dim: 600
+      latent_dim: 200
+      reg_lambda: 0.01
+      lr: 0.001
+      dropout_pkeep: 1
+      
+    

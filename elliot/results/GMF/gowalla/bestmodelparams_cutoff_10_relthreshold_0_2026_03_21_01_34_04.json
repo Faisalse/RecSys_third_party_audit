@@ -1,0 +1,22 @@
+[
+    {
+        "default_validation_metric": "nDCG",
+        "default_validation_cutoff": 10,
+        "rel_threshold": 0
+    },
+    {
+        "meta": {
+            "save_recs": true
+        },
+        "recommender": "GeneralizedMF_seed=42_e=40_bs=512_lr=0$001_mffactors=10_isedgeweighttrain=True",
+        "configuration": {
+            "epochs": 40,
+            "batch_size": 512,
+            "mf_factors": 10,
+            "lr": 0.001,
+            "is_edge_weight_train": true,
+            "name": "GeneralizedMF_seed=42_e=40_bs=512_lr=0$001_mffactors=10_isedgeweighttrain=True",
+            "best_iteration": 35
+        }
+    }
+]

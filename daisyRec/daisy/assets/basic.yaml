@@ -1,0 +1,23 @@
+gpu: '-1'
+seed: 2022
+reproducibility: True
+state: ~
+
+algo_name: 'lightgcn'
+topk: 50
+cand_num: 40981
+sample_method: 'uniform'
+sample_ratio: 0
+num_ng: 4
+rank_list_size_to_save: 50
+
+
+res_path: ~
+dataset: 'gowalla' # 
+UID_NAME: user
+IID_NAME: item
+INTER_NAME: rating
+binary_inter: True
+positive_threshold: ~
+metrics: ["recall","ndcg"]
+

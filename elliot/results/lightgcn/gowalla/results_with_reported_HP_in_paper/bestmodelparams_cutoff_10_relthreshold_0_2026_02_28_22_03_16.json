@@ -1,0 +1,24 @@
+[
+    {
+        "default_validation_metric": "nDCG",
+        "default_validation_cutoff": 10,
+        "rel_threshold": 0
+    },
+    {
+        "meta": {
+            "save_recs": true
+        },
+        "recommender": "LightGCN_seed=42_e=400_bs=2048_lr=0$001_factors=64_n_layers=1_l_w=0$0001_n_fold=1",
+        "configuration": {
+            "lr": 0.001,
+            "epochs": 400,
+            "batch_size": 2048,
+            "factors": 64,
+            "l_w": 0.0001,
+            "n_layers": 1,
+            "n_fold": 1,
+            "name": "LightGCN_seed=42_e=400_bs=2048_lr=0$001_factors=64_n_layers=1_l_w=0$0001_n_fold=1",
+            "best_iteration": 1
+        }
+    }
+]

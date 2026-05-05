@@ -1,0 +1,2 @@
+model	nDCG	Recall	HR
+NGCF_seed=42_e=200_bs=1024_lr=0$0001_factors=64_l_w=1e-05_weight_size=64_node_dropout=0$1_message_dropout=0$1_n_fold=1	0.0003718034257984567	0.000324676537318253	0.0036413290851160674

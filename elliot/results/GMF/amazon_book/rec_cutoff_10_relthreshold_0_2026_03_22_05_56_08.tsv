@@ -1,0 +1,2 @@
+model	nDCG	Recall
+GeneralizedMF_seed=42_e=40_bs=512_lr=0$001_mffactors=10_isedgeweighttrain=True	0.009383476545317933	0.008449676808719622
