@@ -1,7 +1,7 @@
 experiment:
-  path_output_rec_result: results/lightgcn/gowalla/
-  path_output_rec_performance: results/lightgcn/gowalla/
-  dataset: gowalla
+  path_output_rec_result: results/lightgcn/yelp2018/
+  path_output_rec_performance: results/lightgcn/yelp2018/
+  dataset: yelp2018
   data_config:
     strategy: fixed
     train_path: ../data/lightgcn/tuning/{0}/train.tsv
@@ -34,4 +34,3 @@ experiment:
         mode: max
         verbose: True
         min_delta: 0.001
-      

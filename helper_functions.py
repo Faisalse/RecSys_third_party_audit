@@ -24,17 +24,25 @@ def calculate_recomm(recomm_file, top_k_):
         print(f"{key:<20} | {value}")
 
 
-def print_dataset_info(train_users, test_users, dataset_name="Dataset"):
+def print_dataset_name(dataset_name="Dataset"):
     # ANSI escape codes for colors
     RESET = "\033[0m"
     BOLD = "\033[1m"
+    MAGENTA = "\033[95m"
+    print(f"{BOLD}{MAGENTA}{dataset_name}{RESET}")
+    
+
+
+def print_dataset_info(train_users, test_users, valid_users, dataset_name="Dataset"):
+    # ANSI escape codes for colors
+    RESET = "\033[0m"
     CYAN = "\033[96m"
     GREEN = "\033[92m"
     YELLOW = "\033[93m"
-    MAGENTA = "\033[95m"
-
-    print(f"{BOLD}{MAGENTA}{dataset_name}{RESET}")
+    
     print(f"{CYAN}Number of users in training data:{RESET} {GREEN}{train_users}{RESET}")
+    if valid_users > 0:
+        print(f"{CYAN}Number of users in validation data:{RESET} {GREEN}{valid_users}{RESET}")
     print(f"{CYAN}Number of users in test data:{RESET} {YELLOW}{test_users}{RESET}")    
 
 

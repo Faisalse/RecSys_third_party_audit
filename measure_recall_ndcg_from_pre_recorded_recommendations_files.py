@@ -265,7 +265,7 @@ elif args.model_name == "recbole":
 
 
 elif args.model_name == "elliot":
-    from prepare_data_for_elliot import *
+    from prepare_data_for_elliot_HP_tuning import *
     
     # GOWALLA
     model_name = "ELLIOT NGCF"
