@@ -31,6 +31,7 @@ experiment:
       early_stopping:
         patience: 10 # int
         monitor: Recall@20
-        mode: max
+        validation_rate: 1
+        mode: auto
         verbose: True
         min_delta: 0.001

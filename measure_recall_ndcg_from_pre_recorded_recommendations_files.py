@@ -4,7 +4,7 @@ import pandas as pd
 from helper_functions import *
 
 parser = argparse.ArgumentParser()
-parser.add_argument("--model_name", type=str, default="elliot", help="original_ngcf, " \
+parser.add_argument("--model_name", type=str, default="recbole", help="original_ngcf, " \
 "original_lightgcn, daisyrec, recbole, elliot")
 parser.add_argument("--top_k", type=int, nargs="+", default=[20])
 args = parser.parse_args()
@@ -215,17 +215,18 @@ elif args.model_name == "daisyrec":
 
 
 elif args.model_name == "recbole":
-
+    print("^^^^^^^ RESULTS WITH REPORTED HYPERPARAMETERS ^^^^^^^^^^^^^")
     model_name = "recbole_NGCF"
     formating1(model_name)
     # GOWALLA 
-    path = "RecBole/results/NGCF/gowalla/"
+    path = "RecBole/results/with_reported_HP/NGCF/gowalla/"
     path = Path(path)
     recomm_file = pd.read_csv(path / "recommendation_files.csv", sep = "\t")
     formating2("GOWALLA FULL EVALUATION")
     calculate_recomm(recomm_file, args.top_k)
+
     # AMAZON-BOOK
-    path = "RecBole/results/NGCF/amazon-book/"
+    path = "RecBole/results/with_reported_HP/NGCF/amazon-book/"
     path = Path(path)
     recomm_file = pd.read_csv(path / "recommendation_files.csv", sep = "\t")
     formating2("AMAZON-BOOK FULL EVALUATION")
@@ -237,7 +238,7 @@ elif args.model_name == "recbole":
     model_name = "recbole_LIGHTGCN"
     formating1(model_name)
     # GOWALLA 
-    path = "RecBole/results/LightGCN/gowalla/"
+    path = "RecBole/results/with_reported_HP/LightGCN/gowalla/"
     path = Path(path)
     recomm_file = pd.read_csv(path / "recommendation_files.csv", sep = "\t")
     formating2("GOWALLA FULL EVALUATION")
@@ -246,7 +247,7 @@ elif args.model_name == "recbole":
     print(line)
     
     # YELP2018
-    path = "RecBole/results/LightGCN/yelp2018/"
+    path = "RecBole/results/with_reported_HP/LightGCN/yelp2018/"
     path = Path(path)
     recomm_file = pd.read_csv(path / "recommendation_files.csv", sep = "\t")
     formating2("YELP2018 FULL EVALUATION")
@@ -254,7 +255,58 @@ elif args.model_name == "recbole":
     line = "=" * 45
 
     # AMAZON-BOOK
-    path = "RecBole/results/LightGCN/amazon-book/"
+    path = "RecBole/results/with_reported_HP/LightGCN/amazon-book/"
+    path = Path(path)
+    recomm_file = pd.read_csv(path / "recommendation_files.csv", sep = "\t")
+    formating2("AMAZON-BOOK FULL EVALUATION")
+    calculate_recomm(recomm_file, args.top_k)
+    line = "=" * 45
+    print(line)
+
+
+
+    print("^^^^^^^ RESULTS WITH TUNED HYPERPARAMETERS (Bayesian Optimization) ^^^^^^^^^^^^^")
+    """
+    model_name = "recbole_NGCF"
+    formating1(model_name)
+    # GOWALLA 
+    path = "RecBole/results/with_parameter_tuning/NGCF/gowalla/"
+    path = Path(path)
+    recomm_file = pd.read_csv(path / "recommendation_files.csv", sep = "\t")
+    formating2("GOWALLA FULL EVALUATION")
+    calculate_recomm(recomm_file, args.top_k)
+
+    # AMAZON-BOOK
+    path = "RecBole/results/with_parameter_tuning/NGCF/amazon-book/"
+    path = Path(path)
+    recomm_file = pd.read_csv(path / "recommendation_files.csv", sep = "\t")
+    formating2("AMAZON-BOOK FULL EVALUATION")
+    calculate_recomm(recomm_file, args.top_k)
+    line = "=" * 45
+    print(line)
+    """
+    #####################################################################################
+    model_name = "recbole_LIGHTGCN"
+    formating1(model_name)
+    # GOWALLA 
+    path = "RecBole/results/with_parameter_tuning/LightGCN/gowalla/"
+    path = Path(path)
+    recomm_file = pd.read_csv(path / "recommendation_files.csv", sep = "\t")
+    formating2("GOWALLA FULL EVALUATION")
+    calculate_recomm(recomm_file, args.top_k)
+    line = "=" * 45
+    print(line)
+    
+    # YELP2018
+    path = "RecBole/results/with_parameter_tuning/LightGCN/yelp2018/"
+    path = Path(path)
+    recomm_file = pd.read_csv(path / "recommendation_files.csv", sep = "\t")
+    formating2("YELP2018 FULL EVALUATION")
+    calculate_recomm(recomm_file, args.top_k)
+    line = "=" * 45
+
+    # AMAZON-BOOK
+    path = "RecBole/results/with_parameter_tuning/LightGCN/amazon-book/"
     path = Path(path)
     recomm_file = pd.read_csv(path / "recommendation_files.csv", sep = "\t")
     formating2("AMAZON-BOOK FULL EVALUATION")

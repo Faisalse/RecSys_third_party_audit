@@ -1,0 +1,45 @@
+dataset: gowalla
+data_path: data/ngcf/training/
+
+USER_ID_FIELD: user_id
+ITEM_ID_FIELD: item_id
+
+field_separator: "\t"
+
+load_col:
+  inter: [user_id, item_id]
+
+benchmark_filename: [train, valid, test]
+eval_step: 5000
+stopping_step: 5000
+# evaluation
+eval_args:
+  group_by: user
+  order: RO
+  mode: full
+
+# metrics
+metrics: ['Recall', 'NDCG']
+topk: [10, 20]
+valid_metric: Recall@20
+metric_decimal_place: 4
+
+neg_sampling:
+  distribution: uniform     # or: popularity
+  sample_num: 1             # number of negatives per positive
+  alpha: 1.0                # only used for popularity (often safe to keep)
+  dynamic: False            # optional; dynamic sampling is separate
+  candidate_num: 0
+
+
+learning_rate: 0.001
+embedding_size: 128
+n_layers: 4
+reg_weight: 0.001
+
+model: LightGCN
+learner: adam
+epochs: 500
+train_batch_size: 2048
+
+# embedding_size:128	epochs:500	learning_rate:0.001	n_layers:4	reg_weight:0.001

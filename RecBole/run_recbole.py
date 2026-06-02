@@ -1,6 +1,12 @@
 
 import argparse
-from recbole.quick_start import run
+from recbole.quick_start import run_recbole
+import time
+import pandas as pd
+
+
+start = time.time()
+
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
@@ -17,13 +23,15 @@ if __name__ == "__main__":
     args, _ = parser.parse_known_args()
     config_file_list = (args.config_files.strip().split(" ") if args.config_files else None)
 
-    run(
-        args.model,
-        args.dataset,
-        config_file_list=config_file_list,
-        nproc=args.nproc,
-        world_size=args.world_size,
-        ip=args.ip,
-        port=args.port,
-        group_offset=args.group_offset,
-    )
+
+    run_recbole (
+    model=args.model,
+    dataset=args.dataset,
+    config_file_list=config_file_list,
+    saved=True)
+
+    tuning_time = pd.DataFrame()
+    tuning_time["tuning_time (s)"] = [time.time() - start]
+
+    
+    

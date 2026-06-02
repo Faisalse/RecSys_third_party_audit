@@ -1,4 +1,4 @@
-dataset: gowalla
+dataset: amazon-book
 data_path: data/lightgcn/tuning/
 
 
@@ -19,7 +19,7 @@ eval_args:
 
 show_progress: True
 # metrics
-metrics: ['Recall', 'NDCG']
+metrics: ['Recall']
 topk: [10, 20]
 valid_metric: Recall@20
 metric_decimal_place: 4
@@ -31,7 +31,7 @@ neg_sampling:
   dynamic: False            # optional; dynamic sampling is separate
   candidate_num: 0
 
-model: lightGCN
+model: LightGCN
 train_batch_size: 2048
 eval_batch_size: 2048
 learner: adam

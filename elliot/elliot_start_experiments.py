@@ -1,6 +1,6 @@
 from elliot.run import run_experiment
 import argparse
 parser = argparse.ArgumentParser(description="Run sample main.")
-parser.add_argument('--config', type=str, default='lightgcn_yelp2018')
+parser.add_argument('--config', type=str, default='Tuned_movie_lens_1m')
 args = parser.parse_args()
 run_experiment(f"config_files/{args.config}.yml")

@@ -13,6 +13,7 @@ recbole.quick_start
 """
 import logging
 import sys
+import time
 import torch.distributed as dist
 from collections.abc import MutableMapping
 from logging import getLogger
@@ -139,6 +140,7 @@ def run_recbole(
         queue (torch.multiprocessing.Queue, optional): The queue used to pass the result to the main process. Defaults to ``None``.
     """
     # configurations initialization
+    start = time.time()
     config = Config(
         model=model,
         dataset=dataset,
@@ -181,9 +183,6 @@ def run_recbole(
     test_result, recommendation_file = trainer.evaluate_test(
         test_data, train_data, load_best_model=saved, show_progress=config["show_progress"]
     )
-
-    
-    
     recommendation = pd.DataFrame(recommendation_file)
     recommendation.rename(columns={"user_id": "user_id", "ground_truth": "user_ground_truths", "recommended_items": "user_top_k_prediction"}, inplace=True)
     
@@ -193,6 +192,11 @@ def run_recbole(
     
     results_df = pd.DataFrame(list(test_result.items()), columns=["metric", "value"])
     results_df.to_csv(out_path / "results_performance_measures.csv", index=False, sep = "\t")
+
+    
+    tuning_time = pd.DataFrame()
+    tuning_time["tuning_time (s)"] = [time.time() - start]
+    tuning_time.to_csv(out_path / "tuning_time.csv", index=False, sep = "\t")
 
     environment_tb = get_environment(config)
     logger.info(

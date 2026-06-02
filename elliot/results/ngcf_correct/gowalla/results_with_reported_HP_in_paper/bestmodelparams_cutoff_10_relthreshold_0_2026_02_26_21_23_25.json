@@ -1,0 +1,27 @@
+[
+    {
+        "default_validation_metric": "nDCG",
+        "default_validation_cutoff": 10,
+        "rel_threshold": 0
+    },
+    {
+        "meta": {
+            "verbose": true,
+            "save_recs": true
+        },
+        "recommender": "NGCF_seed=42_e=400_bs=1024_lr=0$0001_factors=64_l_w=1e-05_weight_size=64_node_dropout=0$1_message_dropout=0$1_n_fold=1",
+        "configuration": {
+            "lr": 0.0001,
+            "epochs": 400,
+            "batch_size": 1024,
+            "factors": 64,
+            "l_w": 1e-05,
+            "weight_size": "(64,)",
+            "node_dropout": "(0.1,)",
+            "message_dropout": "(0.1,)",
+            "n_fold": 1,
+            "name": "NGCF_seed=42_e=400_bs=1024_lr=0$0001_factors=64_l_w=1e-05_weight_size=64_node_dropout=0$1_message_dropout=0$1_n_fold=1",
+            "best_iteration": 14
+        }
+    }
+]

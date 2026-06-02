@@ -1,0 +1,5 @@
+metric	value
+recall@10	0.0272
+recall@20	0.0474
+ndcg@10	0.0313
+ndcg@20	0.0388

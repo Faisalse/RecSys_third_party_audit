@@ -1,0 +1,72 @@
+2026-05-11 22:09:36.932922: I Start experiment
+2026-05-11 22:09:37.046010: I There will be the splitting
+2026-05-11 22:09:37.232176: I C:\Users\shefai\Desktop\third_party recsys audit\third-party-recsys-audit_\elliot\data\movielens_1m\dataset.tsv - Loaded
+2026-05-11 22:09:44.197521: I Test Fold 0
+2026-05-11 22:09:47.292341: I Statistics	Users:	5949	Items:	2810	Transactions:	454860	Sparsity:	0.9727900678902343
+2026-05-11 22:09:48.489640: I Test Fold 1
+2026-05-11 22:09:51.563338: I Statistics	Users:	5949	Items:	2810	Transactions:	454860	Sparsity:	0.9727900678902343
+2026-05-11 22:09:52.774416: I Test Fold 2
+2026-05-11 22:09:55.796351: I Statistics	Users:	5949	Items:	2810	Transactions:	454860	Sparsity:	0.9727900678902343
+2026-05-11 22:09:57.031715: I Test Fold 3
+2026-05-11 22:10:04.904316: I Statistics	Users:	5949	Items:	2810	Transactions:	454860	Sparsity:	0.9727900678902343
+2026-05-11 22:10:08.470103: I Test Fold 4
+2026-05-11 22:10:17.412633: I Statistics	Users:	5949	Items:	2810	Transactions:	454860	Sparsity:	0.9727900678902343
+2026-05-11 22:10:35.747168: I Tuning begun for NGCF\n
+2026-05-11 22:10:35.768064: I Hyperparameter tuning exploration:
+2026-05-11 22:10:35.768064: I epochs set to 50
+2026-05-11 22:10:35.768064: I factors set to 128
+2026-05-11 22:10:35.769476: I l_w set to 0.1455995931997211
+2026-05-11 22:10:35.769476: I lr set to 0.0018771771586358833
+2026-05-11 22:10:35.769476: I Exploration: Hyperparameter exploration number 1
+2026-05-11 22:10:35.770483: I Exploration: Test Fold exploration number 1
+2026-05-11 22:10:35.770483: I Exploration: Train-Validation Fold exploration number 1
+2026-05-11 22:12:15.887470: I Start experiment
+2026-05-11 22:12:15.989718: I There will be the splitting
+2026-05-11 22:12:16.157009: I C:\Users\shefai\Desktop\third_party recsys audit\third-party-recsys-audit_\elliot\data\movielens_1m\dataset.tsv - Loaded
+2026-05-11 22:12:23.349998: I Test Fold 0
+2026-05-11 22:12:26.292858: I Statistics	Users:	5949	Items:	2810	Transactions:	454860	Sparsity:	0.9727900678902343
+2026-05-11 22:12:27.519874: I Test Fold 1
+2026-05-11 22:12:31.476903: I Statistics	Users:	5949	Items:	2810	Transactions:	454860	Sparsity:	0.9727900678902343
+2026-05-11 22:12:32.633586: I Test Fold 2
+2026-05-11 22:12:35.488961: I Statistics	Users:	5949	Items:	2810	Transactions:	454860	Sparsity:	0.9727900678902343
+2026-05-11 22:12:36.656631: I Test Fold 3
+2026-05-11 22:12:39.532882: I Statistics	Users:	5949	Items:	2810	Transactions:	454860	Sparsity:	0.9727900678902343
+2026-05-11 22:12:40.691872: I Test Fold 4
+2026-05-11 22:12:43.878628: I Statistics	Users:	5949	Items:	2810	Transactions:	454860	Sparsity:	0.9727900678902343
+2026-05-11 22:12:47.846391: I Tuning begun for NGCF\n
+2026-05-11 22:12:47.846391: I Hyperparameter tuning exploration:
+2026-05-11 22:12:47.846391: I epochs set to 50
+2026-05-11 22:12:47.846391: I factors set to 128
+2026-05-11 22:12:47.846391: I l_w set to 0.1455995931997211
+2026-05-11 22:12:47.846391: I lr set to 0.0018771771586358833
+2026-05-11 22:12:47.862060: I Exploration: Hyperparameter exploration number 1
+2026-05-11 22:12:47.862060: I Exploration: Test Fold exploration number 1
+2026-05-11 22:12:47.862060: I Exploration: Train-Validation Fold exploration number 1
+2026-05-11 22:13:16.337388: I Start experiment
+2026-05-11 22:13:16.352568: I There will be the splitting
+2026-05-11 22:13:16.535542: I C:\Users\shefai\Desktop\third_party recsys audit\third-party-recsys-audit_\elliot\data\movielens_1m\dataset.tsv - Loaded
+2026-05-11 22:13:18.459149: I Test Fold 0
+2026-05-11 22:13:21.466795: I Statistics	Users:	5949	Items:	2810	Transactions:	454860	Sparsity:	0.9727900678902343
+2026-05-11 22:13:24.299622: I Tuning begun for NGCF\n
+2026-05-11 22:13:24.299622: I Hyperparameter tuning exploration:
+2026-05-11 22:13:24.299622: I epochs set to 50
+2026-05-11 22:13:24.299622: I factors set to 128
+2026-05-11 22:13:24.299622: I l_w set to 0.1455995931997211
+2026-05-11 22:13:24.299622: I lr set to 0.0018771771586358833
+2026-05-11 22:13:24.299622: I Exploration: Hyperparameter exploration number 1
+2026-05-11 22:13:24.299622: I Exploration: Test Fold exploration number 1
+2026-05-11 22:13:24.299622: I Exploration: Train-Validation Fold exploration number 1
+2026-05-11 22:14:47.506422: I Start experiment
+2026-05-11 22:14:47.534491: I There will be the splitting
+2026-05-11 22:14:47.711596: I C:\Users\shefai\Desktop\third_party recsys audit\third-party-recsys-audit_\elliot\data\movielens_1m\dataset.tsv - Loaded
+2026-05-11 22:14:49.240422: I Test Fold 0
+2026-05-11 22:14:56.650990: I Statistics	Users:	5949	Items:	2810	Transactions:	454860	Sparsity:	0.9727900678902343
+2026-05-11 22:15:05.178052: I Tuning begun for NGCF\n
+2026-05-11 22:15:05.210333: I Hyperparameter tuning exploration:
+2026-05-11 22:15:05.210333: I epochs set to 50
+2026-05-11 22:15:05.211420: I factors set to 128
+2026-05-11 22:15:05.212248: I l_w set to 0.1455995931997211
+2026-05-11 22:15:05.212248: I lr set to 0.0018771771586358833
+2026-05-11 22:15:05.212248: I Exploration: Hyperparameter exploration number 1
+2026-05-11 22:15:05.212248: I Exploration: Test Fold exploration number 1
+2026-05-11 22:15:05.212248: I Exploration: Train-Validation Fold exploration number 1

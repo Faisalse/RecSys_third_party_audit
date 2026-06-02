@@ -1,0 +1,8 @@
+2026-05-11 22:15:05.210333: I Loading parameters
+2026-05-11 22:15:05.211420: I Parameter lr set to 0.0018771771586358833
+2026-05-11 22:15:05.212248: I Parameter latent_dim set to 64
+2026-05-11 22:15:05.212248: I Parameter l_w set to 0.1455995931997211
+2026-05-11 22:15:05.212248: I Parameter weight_size set to [64]
+2026-05-11 22:15:05.212248: I Parameter node_dropout set to [0.1, 0.2, 0.3, 0.45, 0.5]
+2026-05-11 22:15:05.212248: I Parameter message_dropout set to [0.1, 0.2, 0.3, 0.45, 0.5]
+2026-05-11 22:15:05.212248: I Parameter n_fold set to 5
