@@ -14,6 +14,7 @@ recbole.quick_start
 import logging
 import sys
 import time
+import torch
 import torch.distributed as dist
 from collections.abc import MutableMapping
 from logging import getLogger
@@ -25,6 +26,7 @@ from recbole.data import (
     create_dataset,
     data_preparation,
 )
+
 from recbole.data.transform import construct_transform
 from recbole.utils import (
     init_logger,
@@ -35,6 +37,7 @@ from recbole.utils import (
     get_flops,
     get_environment,
 )
+
 
 def test(train):
     dataset = train.dataset
@@ -141,6 +144,10 @@ def run_recbole(
     """
     # configurations initialization
     start = time.time()
+
+    torch.cuda.reset_peak_memory_stats()
+    torch.cuda.empty_cache()
+
     config = Config(
         model=model,
         dataset=dataset,
@@ -192,11 +199,15 @@ def run_recbole(
     
     results_df = pd.DataFrame(list(test_result.items()), columns=["metric", "value"])
     results_df.to_csv(out_path / "results_performance_measures.csv", index=False, sep = "\t")
-
+    
+    peak_memory_bytes = torch.cuda.max_memory_allocated()
+    peak_memory_gb = peak_memory_bytes / 1024**3
     
     tuning_time = pd.DataFrame()
-    tuning_time["tuning_time (s)"] = [time.time() - start]
-    tuning_time.to_csv(out_path / "tuning_time.csv", index=False, sep = "\t")
+    tuning_time["training_time (s)"] = [time.time() - start]
+    tuning_time["GPU memory usage (GB)"] = [peak_memory_gb]
+
+    tuning_time.to_csv(out_path / "training_time.csv", index=False, sep = "\t")
 
     environment_tb = get_environment(config)
     logger.info(

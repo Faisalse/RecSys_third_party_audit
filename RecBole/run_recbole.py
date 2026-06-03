@@ -3,9 +3,9 @@ import argparse
 from recbole.quick_start import run_recbole
 import time
 import pandas as pd
-
-
 start = time.time()
+
+
 
 
 if __name__ == "__main__":
@@ -30,8 +30,9 @@ if __name__ == "__main__":
     config_file_list=config_file_list,
     saved=True)
 
-    tuning_time = pd.DataFrame()
-    tuning_time["tuning_time (s)"] = [time.time() - start]
+    
+
+    
 
     
     
