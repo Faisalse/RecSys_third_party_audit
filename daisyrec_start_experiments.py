@@ -3,6 +3,7 @@ from logging import getLogger
 from pathlib import Path
 import time
 import pandas as pd
+import torch
 from daisyRec.daisy.model.NGCFRecommender import NGCF
 from daisyRec.daisy.model.LightGCNRecommender import LightGCN
 from daisyRec.daisy.utils.splitter import TestSplitter
@@ -13,6 +14,11 @@ from daisyRec.daisy.utils.config import init_seed, init_config, init_logger
 from daisyRec.daisy.utils.sampler import BasicNegtiveSampler, SkipGramNegativeSampler
 from daisyRec.daisy.utils.dataset import get_dataloader, BasicDataset, CandidatesDataset, AEDataset
 from daisyRec.daisy.utils.utils import ensure_dir, get_ur, get_history_matrix, build_candidates_set, get_inter_matrix
+
+
+torch.cuda.reset_peak_memory_stats()
+torch.cuda.empty_cache()
+
 
 model_config = {
     'ngcf': NGCF,
@@ -62,8 +68,6 @@ if __name__ == '__main__':
         print(path)
     
     path =   Path(path)
-
-    
     train_path = path / "train.txt" 
     test_path = path / "test.txt"  
 
@@ -150,14 +154,21 @@ if __name__ == '__main__':
 
     topk = int(config["rank_list_size_to_save"])
     prediction_df = save_prediction_files(test_ur, preds[:, :topk], test_u)
-
+    
     
     results.to_csv(path / "resultFile.txt", index=False, sep = "\t")
     prediction_df.to_csv(path / "prediction_files.txt", index=False, sep = "\t")
+    print("********* Performance meaures ************")
     print(results)
-    
-    train_df = pd.DataFrame()
-    train_df["train_time"] = [cal]
-    train_df.to_csv(path / "training_time.txt", index=False, sep = "\t")
+
+    peak_memory_bytes = torch.cuda.max_memory_allocated()
+    peak_memory_gb = peak_memory_bytes / 1024**3
+
+    other_info = pd.DataFrame()
+    other_info["train_time (s)"] = [cal]
+    other_info["Memory usuage (GB)"] = [peak_memory_gb]
+    other_info.to_csv(path / "training_time.txt", index=False, sep = "\t")
+    print("********* Other meaures ************")
+    print(other_info)
 
     

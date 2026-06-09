@@ -266,7 +266,7 @@ elif args.model_name == "recbole":
 
 
     print("^^^^^^^ RESULTS WITH TUNED HYPERPARAMETERS (Bayesian Optimization) ^^^^^^^^^^^^^")
-    """
+    
     model_name = "recbole_NGCF"
     formating1(model_name)
     # GOWALLA 
@@ -284,7 +284,7 @@ elif args.model_name == "recbole":
     calculate_recomm(recomm_file, args.top_k)
     line = "=" * 45
     print(line)
-    """
+    
     #####################################################################################
     model_name = "recbole_LIGHTGCN"
     formating1(model_name)
