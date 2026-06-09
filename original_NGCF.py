@@ -468,15 +468,12 @@ if __name__ == '__main__':
     should_stop = False
     start = time.time()
 
-    row_memory_time_complexity = []
-    
-    overall_peak_ram = 0
+
     for epoch in range(args.epoch):
 
         print(f"Total epochs: {args.epoch}")
         print(f"Current epoch: {epoch + 1}")
 
-        start_time = time.time()
 
         loss, mf_loss, emb_loss, reg_loss = 0., 0., 0., 0.
         n_batch = data_generator.n_train // args.batch_size + 1
@@ -494,23 +491,7 @@ if __name__ == '__main__':
             reg_loss += batch_reg_loss
         
 
-        epoch_time = time.time() - start_time
-        mem_info = process.memory_info()
-        current_ram = mem_info.rss
-        peak_ram = mem_info.peak_wset   # Windows peak working set
-
-        overall_peak_ram = max(overall_peak_ram, peak_ram)
-        current_ram = current_ram / (1024**2)
-        peak_ram = peak_ram / (1024**2)
-        
-        print(f"  Current RAM: {current_ram:.2f} MB")
-        print(f"  Peak RAM so far: {peak_ram:.2f} MB")
-        row_memory_time_complexity.append([epoch+1, epoch_time, current_ram, peak_ram])
-        
-
-    row_memory_time_complexity = pd.DataFrame(row_memory_time_complexity, columns = ["Epoch", "Epoch time(s)", "Current_ram (MB)", "Peak RAM (MB)"])
-    training_time = time.time() - start
-    start = time.time()
+    
     users_to_test = list(data_generator.test_set.keys())
     ret, recommendation_files_df = test(sess, model, users_to_test, save_recommendation_files = True, drop_flag=True)
     
@@ -520,9 +501,7 @@ if __name__ == '__main__':
         df["Recall@"+str(K[i])] = [ret['recall'][i]]
         df["NDCG@"+str(K[i])] = [ret['ndcg'][i]]
     
-    df["T-time"] = [training_time]
-    df["P-time"] = [time.time() - start]
-    df["AP-time"] = [(time.time() - start) /len(users_to_test)]
+
     
     # create a required folder....
     name = "results/orginal_ngcf/"+args.dataset+"/"
@@ -530,7 +509,7 @@ if __name__ == '__main__':
     path.mkdir(parents=True, exist_ok=True)
     df.to_csv(path / "results.csv", index = False, sep = "\t")
     recommendation_files_df.to_csv(path / "recommendation_files.csv", index = False, sep = "\t")
-    row_memory_time_complexity.to_csv(path / "Memory_time_complexity.csv", index = False, sep = "\t")
+    
 
 
 

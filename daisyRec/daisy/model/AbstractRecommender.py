@@ -112,11 +112,9 @@ class GeneralRecommender(AbstractRecommender):
             self.criterion = None
 
         last_loss = 0
-        row_memory_time_complexity = []
-        overall_peak_ram = 0
+        
 
         for epoch in range(1, self.epochs + 1):
-            start_time = time.time()
             self.train()
 
             current_loss = 0.
@@ -141,22 +139,6 @@ class GeneralRecommender(AbstractRecommender):
             else:
                 last_loss = current_loss
 
-            
-            epoch_time = time.time() - start_time
-            mem_info = process.memory_info()
-            current_ram = mem_info.rss
-            peak_ram = mem_info.peak_wset   # Windows peak working set
-
-            overall_peak_ram = max(overall_peak_ram, peak_ram)
-            current_ram = current_ram / (1024**2)
-            peak_ram = peak_ram / (1024**2)
-            
-            print(f"  Current RAM: {current_ram:.2f} MB")
-            print(f"  Peak RAM so far: {peak_ram:.2f} MB")
-            row_memory_time_complexity.append([epoch, epoch_time, current_ram, peak_ram])
-
-        row_memory_time_complexity = pd.DataFrame(row_memory_time_complexity, columns = ["Epoch", "Epoch time(s)", "Current_ram (MB)", "Peak RAM (MB)"])    
-        row_memory_time_complexity.to_csv(config["res_path"] / "memory_time_complexity.txt", index=False, sep = "\t")
 
 class AERecommender(GeneralRecommender):
     def __init__(self, config):

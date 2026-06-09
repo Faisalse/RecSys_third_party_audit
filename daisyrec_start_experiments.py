@@ -15,10 +15,8 @@ from daisyRec.daisy.utils.sampler import BasicNegtiveSampler, SkipGramNegativeSa
 from daisyRec.daisy.utils.dataset import get_dataloader, BasicDataset, CandidatesDataset, AEDataset
 from daisyRec.daisy.utils.utils import ensure_dir, get_ur, get_history_matrix, build_candidates_set, get_inter_matrix
 
-
 torch.cuda.reset_peak_memory_stats()
 torch.cuda.empty_cache()
-
 
 model_config = {
     'ngcf': NGCF,

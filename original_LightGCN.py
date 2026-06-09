@@ -573,10 +573,6 @@ if __name__ == '__main__':
     stopping_step = 0
     should_stop = False
     
-    train_time = time.time()
-
-    row_memory_time_complexity = []
-    overall_peak_ram = 0
     for epoch in range(1, args.epoch + 1):
 
         start_time = time.time()
@@ -636,27 +632,10 @@ if __name__ == '__main__':
             emb_loss_test += batch_emb_loss_test / n_batch
             
 
-        epoch_time = time.time() - start_time
-        
-        mem_info = process.memory_info()
-        current_ram = mem_info.rss
-        peak_ram = mem_info.peak_wset   # Windows peak working set
-
-        overall_peak_ram = max(overall_peak_ram, peak_ram)
-        current_ram = current_ram / (1024**2)
-        peak_ram = peak_ram / (1024**2)
-        
-        print(f"  Current RAM: {current_ram:.2f} MB")
-        print(f"  Peak RAM so far: {peak_ram:.2f} MB")
-        row_memory_time_complexity.append([epoch+1, epoch_time, current_ram, peak_ram])
-        
-    row_memory_time_complexity = pd.DataFrame(row_memory_time_complexity, columns = ["Epoch", "Epoch time(s)", "Current_ram (MB)", "Peak RAM (MB)"])
     print("Model testing")
     users_to_test = list(data_generator.train_items.keys()) 
-    train_time = time.time() - train_time
-    test_time = time.time()
     result, recommendation_files_df = test(sess, model, users_to_test ,drop_flag=True, save_recommendation_files = True)
-    test_time = time.time() - test_time
+    
     
 
     df = pd.DataFrame()
@@ -665,10 +644,6 @@ if __name__ == '__main__':
         df["Pre@"+str(K[i])] = [result['precision'][i]]
         df["Recall@"+str(K[i])] = [result['recall'][i]]
         df["NDCG@"+str(K[i])] = [result['ndcg'][i]]
-
-    df["T-time"] = [train_time]
-    df["P-time"] = [test_time]
-    df["AP-time"] = [test_time /len(users_to_test)]
 
     folder = "results/original_lightgcn/"+args.dataset
     path = Path(folder)
@@ -679,5 +654,4 @@ if __name__ == '__main__':
 
     fie_name_recommendation = args.dataset + "_lightgcn_recommendation.txt"
     recommendation_files_df.to_csv(path / "recommendation_files.csv", index = False, sep = "\t")
-    row_memory_time_complexity.to_csv(path / "Memory_time_complexity.csv", index = False, sep = "\t")
     print(df)
