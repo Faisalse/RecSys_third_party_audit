@@ -1,2 +1,2 @@
-train_time
-114590.79287481308
+train_time (s)	Memory usuage (GB)
+111437.916	10.666417598724365
