@@ -1,0 +1,28 @@
+experiment:
+  dataset: movielens_1m
+  backend: pytorch
+  data_config:
+    strategy: dataset
+    dataset_path: ../data/{0}/dataset.tsv
+  splitting:
+    test_splitting:
+        strategy: random_subsampling
+        test_ratio: 0.1
+  top_k: 10
+  evaluation:
+    cutoffs: [10]
+    simple_metrics: [nDCG,Recall,HR]
+  external_models_path: ../external/models/__init__.py
+  gpu: 0
+  models:
+    external.NGCF:
+      meta:
+        save_recs: True
+      lr: 0.0005
+      epochs: 5
+      batch_size: 8192
+      factors: 64
+      batch_size: 256
+      l_w: 0.1
+      weight_size: 64
+      n_fold: 1

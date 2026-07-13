@@ -45,6 +45,8 @@ class ItemKNN(RecMixin, BaseRecommenderModel):
     @init_charger
     def __init__(self, data, config, params, *args, **kwargs):
 
+        self.lc_logger = getattr(config, "lc_logger", None)
+
         self._params_list = [
             ("_num_neighbors", "neighbors", "nn", 40, int, None),
             ("_similarity", "similarity", "sim", "cosine", None, None),
@@ -99,13 +101,17 @@ class ItemKNN(RecMixin, BaseRecommenderModel):
             return self.restore_weights()
 
         start = time.time()
+        self.lc_logger.start_training()
         self._model.initialize()
         end = time.time()
+        self.lc_logger.end_training()
         print(f"The similarity computation has taken: {end - start}")
 
         print(f"Transactions: {self._data.transactions}")
 
+        self.lc_logger.start_evaluation()
         self.evaluate()
+        self.lc_logger.end_evaluation()
 
         # best_metric_value = 0
         #

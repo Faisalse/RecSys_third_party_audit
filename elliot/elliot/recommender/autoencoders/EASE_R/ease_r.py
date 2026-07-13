@@ -75,21 +75,44 @@ class EASER(RecMixin, BaseRecommenderModel):
 
         self._train = self._data.sp_i_train_ratings
 
-        self._similarity_matrix = safe_sparse_dot(self._train.T, self._train, dense_output=True)
+        #! ORIGINAL CODE PRESENT BUG THAT RESULTS IN LOWER PERFORMANCE
+        # self._similarity_matrix = safe_sparse_dot(self._train.T, self._train, dense_output=True)
 
-        diagonal_indices = np.diag_indices(self._similarity_matrix.shape[0])
-        item_popularity = np.ediff1d(self._train.tocsc().indptr)
-        self._similarity_matrix[diagonal_indices] = item_popularity + self._l2_norm
+        # diagonal_indices = np.diag_indices(self._similarity_matrix.shape[0])
+        # item_popularity = np.ediff1d(self._train.tocsc().indptr)
+        # self._similarity_matrix[diagonal_indices] = item_popularity + self._l2_norm
 
-        P = np.linalg.inv(self._similarity_matrix)
+        # P = np.linalg.inv(self._similarity_matrix)
 
-        self._similarity_matrix = P / (-np.diag(P))
+        # self._similarity_matrix = P / (-np.diag(P))
 
-        self._similarity_matrix[diagonal_indices] = 0.0
+        # self._similarity_matrix[diagonal_indices] = 0.0
+        
+        
+        #! REVISED CODE WITH FIXED BUG
+        print(self._train.dtype)
+        
+        G = self._train.T @ self._train
+        
+        print(G.shape)
+        
+        G = G + self._l2_norm * np.identity(self._train.shape[1])
+        
+        print(G.shape)
+        
+        B = np.linalg.inv(G)
+        
+        print(B.shape)
+        
+        # B = scipy.linalg.inv(G, check_finite=False)
+        B /= -np.diag(B)
+        np.fill_diagonal(B, 0.0)
+        
+        print(B.shape)
 
         end = time.time()
         self.logger.info(f"The similarity computation has taken: {end - start}")
 
-        self._preds = self._train.dot(self._similarity_matrix)
+        self._preds = self._train.dot(B)
 
         self.evaluate()

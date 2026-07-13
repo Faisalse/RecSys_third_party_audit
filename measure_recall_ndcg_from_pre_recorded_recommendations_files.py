@@ -4,7 +4,7 @@ import pandas as pd
 from helper_functions import *
 
 parser = argparse.ArgumentParser()
-parser.add_argument("--model_name", type=str, default="recbole", help="original_ngcf, " \
+parser.add_argument("--model_name", type=str, default="elliot", help="original_ngcf, " \
 "original_lightgcn, daisyrec, recbole, elliot")
 parser.add_argument("--top_k", type=int, nargs="+", default=[20])
 args = parser.parse_args()
@@ -317,19 +317,21 @@ elif args.model_name == "recbole":
 
 
 elif args.model_name == "elliot":
-    from prepare_data_for_elliot_HP_tuning import *
+    #from prepare_data_for_elliot_HP_tuning import *
     
     # GOWALLA
     model_name = "ELLIOT NGCF"
     formating1(model_name)
-    path = "elliot/results/ngcf/gowalla/"
+    path = "elliot/results/with_reported_HP/ngcf/gowalla/"
     path = Path(path)
-    recomm_file = pd.read_csv(path / "recommendation_files.tsv", sep = "\t")
+    recomm_file = pd.read_csv(path / "NGCF_seed=42_e=400_bs=1024_lr=0$0001_factors=64_l_w=1e-05_n_layers=1_weight_size=64_node_dropout=0$1_message_dropout=0$1_it=400.tsv", sep = "\t")
+    recomm_file.columns = ["UserID", "ItemID", "score"]
     predictions = recomm_file.groupby("UserID")["ItemID"].apply(list)
-
-    path = "elliot/data/ngcf/gowalla/"
+    
+    path = "elliot/data/ngcf/training/gowalla/"
     path = Path(path)
     turth_df = pd.read_csv(path / "test.tsv", sep = "\t")
+    turth_df.columns = ["UserID", "ItemID", "rating"]
     turth_values = turth_df.groupby("UserID")["ItemID"].apply(list)
     rows = []
     for index_ in predictions.index:
@@ -338,16 +340,20 @@ elif args.model_name == "elliot":
     formating2("GOWALLA FULL EVALUATION")
     calculate_recomm(recomm_file, args.top_k)
     
-
-    path = "elliot/results/ngcf/amazon_book/"
+    
+    # AMAZN-BOOK
+    path = "elliot/results/with_reported_HP/ngcf/amazon-book/"
     path = Path(path)
-    recomm_file = pd.read_csv(path / "recommendation_files.tsv", sep = "\t")
+    recomm_file = pd.read_csv(path / "NGCF_seed=42_e=200_bs=1024_lr=0$0005_factors=64_l_w=1e-05_n_layers=1_weight_size=64_node_dropout=0$1_message_dropout=0$1_it=200.tsv", sep = "\t")
+    recomm_file.columns = ["UserID", "ItemID", "score"]
     predictions = recomm_file.groupby("UserID")["ItemID"].apply(list)
 
-    path = "elliot/data/ngcf/amazon-book/"
+    path = "elliot/data/ngcf/training/amazon-book/"
     path = Path(path)
     turth_df = pd.read_csv(path / "test.tsv", sep = "\t")
+    turth_df.columns = ["UserID", "ItemID", "rating"]
     turth_values = turth_df.groupby("UserID")["ItemID"].apply(list)
+
     rows = []
     for index_ in predictions.index:
         if index_ in turth_values.index and index_ in predictions.index:
@@ -362,182 +368,81 @@ elif args.model_name == "elliot":
     model_name = "ELLIOT LIGHTGCN"
     formating1(model_name)
     # GOWALLA
-    path = "elliot/results/lightgcn/gowalla/"
+    path = "elliot/results/with_reported_HP/lightgcn/gowalla/"
     path = Path(path)
-    recomm_file = pd.read_csv(path / "recommendation_files.tsv", sep = "\t")
+    recomm_file = pd.read_csv(path / "LightGCN_seed=42_e=1000_bs=2048_lr=0$001_factors=64_l_w=0$0001_n_layers=1_it=1000.tsv", sep = "\t", header=None)
+    recomm_file.columns = ["UserID", "ItemID", "score"]
     predictions = recomm_file.groupby("UserID")["ItemID"].apply(list)
-
-    path = "elliot/data/lightgcn/gowalla/"
+    
+    path = "elliot/data/lightgcn/training/gowalla/"
     path = Path(path)
     turth_df = pd.read_csv(path / "test.tsv", sep = "\t")
+    turth_df.columns = ["UserID", "ItemID", "rating"]
     turth_values = turth_df.groupby("UserID")["ItemID"].apply(list)
     rows = []
+    
     for index_ in predictions.index:
         rows.append([index_, str(turth_values[index_]),  str(predictions[index_])  ])
+
     recomm_file = pd.DataFrame(rows, columns=["UserID", "user_ground_truths", "user_top_k_prediction"])
     formating2("GOWALLA FULL EVALUATION")
     calculate_recomm(recomm_file, args.top_k)
 
-
-    path = "elliot/results/lightgcn/amazon_book/"
+    # AMAZON-BOOK
+    path = "elliot/results/with_reported_HP/lightgcn/amazon-book/"
     path = Path(path)
-    recomm_file = pd.read_csv(path / "recommendation_files.tsv", sep = "\t")
+    recomm_file = pd.read_csv(path / "LightGCN_seed=42_e=1000_bs=8192_lr=0$001_factors=64_l_w=0$0001_n_layers=1_it=1000.tsv", sep = "\t", header=None)
+    recomm_file.columns = ["UserID", "ItemID", "score"]
     predictions = recomm_file.groupby("UserID")["ItemID"].apply(list)
-
-    path = "elliot/data/lightgcn/amazon-book/"
+        
+    path = "elliot/data/lightgcn/training/amazon-book/"
     path = Path(path)
     turth_df = pd.read_csv(path / "test.tsv", sep = "\t")
+    turth_df.columns = ["UserID", "ItemID", "rating"]
     turth_values = turth_df.groupby("UserID")["ItemID"].apply(list)
     rows = []
+
     for index_ in predictions.index:
         if index_ in turth_values.index and index_ in predictions.index:
             rows.append([index_, str(turth_values[index_]),  str(predictions[index_])  ])
     recomm_file = pd.DataFrame(rows, columns=["UserID", "user_ground_truths", "user_top_k_prediction"])
     formating2("AMAZON-BOOK FULL EVALUATION")
     calculate_recomm(recomm_file, args.top_k)
-
+    
 
     # yelp2018
-    path = "elliot/results/lightgcn/yelp2018/"
+    path = "elliot/results/with_reported_HP/lightgcn/yelp2018/"
     path = Path(path)
-    recomm_file = pd.read_csv(path / "recommendation_files.tsv", sep = "\t")
+    recomm_file = pd.read_csv(path / "LightGCN_seed=42_e=1000_bs=2048_lr=0$001_factors=64_l_w=0$0001_n_layers=1_it=1000.tsv", sep = "\t", header=None)
+    recomm_file.columns = ["UserID", "ItemID", "score"]
     predictions = recomm_file.groupby("UserID")["ItemID"].apply(list)
 
-    path = "elliot/data/lightgcn/yelp2018/"
+    path = "elliot/data/lightgcn/training/yelp2018/"
     path = Path(path)
     turth_df = pd.read_csv(path / "test.tsv", sep = "\t")
+    turth_df.columns = ["UserID", "ItemID", "rating"]
     turth_values = turth_df.groupby("UserID")["ItemID"].apply(list)
     rows = []
+
     for index_ in predictions.index:
         rows.append([index_, str(turth_values[index_]),  str(predictions[index_])  ])
+
     recomm_file = pd.DataFrame(rows, columns=["UserID", "user_ground_truths", "user_top_k_prediction"])
     formating2("YELP2018 FULL EVALUATION")
     calculate_recomm(recomm_file, args.top_k)
     line = "=" * 45
     print(line)
-    ################################### 
-    model_name = "ELLIOT MutiDAE"
-    formating1(model_name)
-    # GOWALLA
-    path = "elliot/results/MultiDAE/gowalla/"
-    path = Path(path)
-    recomm_file = pd.read_csv(path / "recommendation_files.tsv", sep = "\t")
-    recomm_file.columns = ["UserID", "ItemID", "score"]
-    predictions = recomm_file.groupby("UserID")["ItemID"].apply(list)
-
-    path = "elliot/data/lightgcn/gowalla/"
-    path = Path(path)
-    turth_df = pd.read_csv(path / "test.tsv", sep = "\t")
-    turth_values = turth_df.groupby("UserID")["ItemID"].apply(list)
-    rows = []
-    for index_ in predictions.index:
-        rows.append([index_, str(turth_values[index_]),  str(predictions[index_])  ])
-    recomm_file = pd.DataFrame(rows, columns=["UserID", "user_ground_truths", "user_top_k_prediction"])
-    formating2("GOWALLA FULL EVALUATION")
-    calculate_recomm(recomm_file, args.top_k)
+    
     
 
-    # YELP 2018
-    path = "elliot/results/MultiDAE/yelp2018/"
-    path = Path(path)
-    recomm_file = pd.read_csv(path / "recommendation_files.tsv", sep = "\t")
-    recomm_file.columns = ["UserID", "ItemID", "score"]
-    predictions = recomm_file.groupby("UserID")["ItemID"].apply(list)
-
-    path = "elliot/data/lightgcn/yelp2018/"
-    path = Path(path)
-    turth_df = pd.read_csv(path / "test.tsv", sep = "\t")
-    turth_values = turth_df.groupby("UserID")["ItemID"].apply(list)
-    rows = []
-    for index_ in predictions.index:
-        rows.append([index_, str(turth_values[index_]),  str(predictions[index_])  ])
-    recomm_file = pd.DataFrame(rows, columns=["UserID", "user_ground_truths", "user_top_k_prediction"])
-    formating2("YELP2018 FULL EVALUATION")
-    calculate_recomm(recomm_file, args.top_k)
     
-    # amazon-book
-    path = "elliot/results/MultiDAE/amazon-book/"
-    path = Path(path)
-    recomm_file = pd.read_csv(path / "recommendation_files.tsv", sep = "\t")
-    recomm_file.columns = ["UserID", "ItemID", "score"]
-    predictions = recomm_file.groupby("UserID")["ItemID"].apply(list)
-
-    path = "elliot/data/lightgcn/amazon-book/"
-    path = Path(path)
-    turth_df = pd.read_csv(path / "test.tsv", sep = "\t")
-    turth_values = turth_df.groupby("UserID")["ItemID"].apply(list)
-    rows = []
-    for index_ in predictions.index:
-        rows.append([index_, str(turth_values[index_]),  str(predictions[index_])  ])
-    recomm_file = pd.DataFrame(rows, columns=["UserID", "user_ground_truths", "user_top_k_prediction"])
-    formating2("AMAZON-BOOK FULL EVALUATION")
-    calculate_recomm(recomm_file, args.top_k)
-    line = "=" * 45
-    print(line)
-
-
-
-
-    ################################### 
-    model_name = "ELLIOT GMF"
-    formating1(model_name)
-    # GOWALLA
-    path = "elliot/results/GMF/gowalla/"
-    path = Path(path)
-    recomm_file = pd.read_csv(path / "recommendation_files.tsv", sep = "\t")
-    recomm_file.columns = ["UserID", "ItemID", "score"]
-    predictions = recomm_file.groupby("UserID")["ItemID"].apply(list)
-
-    path = "elliot/data/lightgcn/gowalla/"
-    path = Path(path)
-    turth_df = pd.read_csv(path / "test.tsv", sep = "\t")
-    turth_values = turth_df.groupby("UserID")["ItemID"].apply(list)
-    rows = []
-    for index_ in predictions.index:
-        rows.append([index_, str(turth_values[index_]),  str(predictions[index_])  ])
-    recomm_file = pd.DataFrame(rows, columns=["UserID", "user_ground_truths", "user_top_k_prediction"])
-    formating2("GOWALLA FULL EVALUATION")
-    calculate_recomm(recomm_file, args.top_k)
+    
+    
     
 
-    # YELP 2018
-    path = "elliot/results/GMF/yelp2018/"
-    path = Path(path)
-    recomm_file = pd.read_csv(path / "recommendation_files.tsv", sep = "\t")
-    recomm_file.columns = ["UserID", "ItemID", "score"]
-    predictions = recomm_file.groupby("UserID")["ItemID"].apply(list)
-
-    path = "elliot/data/lightgcn/yelp2018/"
-    path = Path(path)
-    turth_df = pd.read_csv(path / "test.tsv", sep = "\t")
-    turth_values = turth_df.groupby("UserID")["ItemID"].apply(list)
-    rows = []
-    for index_ in predictions.index:
-        rows.append([index_, str(turth_values[index_]),  str(predictions[index_])  ])
-    recomm_file = pd.DataFrame(rows, columns=["UserID", "user_ground_truths", "user_top_k_prediction"])
-    formating2("YELP2018 FULL EVALUATION")
-    calculate_recomm(recomm_file, args.top_k)
     
-    # amazon-book
-    path = "elliot/results/GMF/amazon_book/"
-    path = Path(path)
-    recomm_file = pd.read_csv(path / "recommendation_files.tsv", sep = "\t")
-    recomm_file.columns = ["UserID", "ItemID", "score"]
-    predictions = recomm_file.groupby("UserID")["ItemID"].apply(list)
-
-    path = "elliot/data/lightgcn/amazon-book/"
-    path = Path(path)
-    turth_df = pd.read_csv(path / "test.tsv", sep = "\t")
-    turth_values = turth_df.groupby("UserID")["ItemID"].apply(list)
-    rows = []
-    for index_ in predictions.index:
-        rows.append([index_, str(turth_values[index_]),  str(predictions[index_])  ])
-    recomm_file = pd.DataFrame(rows, columns=["UserID", "user_ground_truths", "user_top_k_prediction"])
-    formating2("YELP2018 FULL EVALUATION")
-    calculate_recomm(recomm_file, args.top_k)
-    line = "=" * 45
-    print(line)
- 
+    
+    
     
 
 

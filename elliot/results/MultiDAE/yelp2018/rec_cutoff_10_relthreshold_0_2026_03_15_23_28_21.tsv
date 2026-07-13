@@ -1,2 +1,0 @@
-model	nDCG	Recall
-MultiDAE_seed=42_e=20_bs=512_intermediate_dim=600_latent_dim=200_reg_lambda=0$01_lr=0$001_dropout_pkeep=0$0	0.03510388647406448	0.03209409625823909

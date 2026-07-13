@@ -4,6 +4,7 @@ from pathlib import Path
 import time
 import pandas as pd
 import torch
+import gc
 from daisyRec.daisy.model.NGCFRecommender import NGCF
 from daisyRec.daisy.model.LightGCNRecommender import LightGCN
 from daisyRec.daisy.utils.splitter import TestSplitter
@@ -159,6 +160,7 @@ if __name__ == '__main__':
     print("********* Performance meaures ************")
     print(results)
 
+    
     peak_memory_bytes = torch.cuda.max_memory_allocated()
     peak_memory_gb = peak_memory_bytes / 1024**3
 

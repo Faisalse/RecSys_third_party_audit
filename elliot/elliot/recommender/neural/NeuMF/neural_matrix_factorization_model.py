@@ -49,10 +49,10 @@ class NeuralMatrixFactorizationModel(keras.Model):
         self.item_mlp_embedding = keras.layers.Embedding(input_dim=self.num_items, output_dim=self.embed_mlp_size,
                                                          embeddings_initializer=self.initializer, name='I_MLP',
                                                          dtype=tf.float32)
-        self.user_mf_embedding(0)
-        self.user_mlp_embedding(0)
-        self.item_mf_embedding(0)
-        self.item_mlp_embedding(0)
+        # self.user_mf_embedding(0)
+        # self.user_mlp_embedding(0)
+        # self.item_mf_embedding(0)
+        # self.item_mlp_embedding(0)
 
         self.mlp_layers = keras.Sequential()
 
@@ -125,14 +125,25 @@ class NeuralMatrixFactorizationModel(keras.Model):
             The matrix of predicted values.
         """
         user, item = inputs
-        user_mf_e = self.user_mf_embedding(user)
-        item_mf_e = self.item_mf_embedding(item)
-        user_mlp_e = self.user_mlp_embedding(user)
-        item_mlp_e = self.item_mlp_embedding(item)
+        
+        # FIX: Salviamo la forma originale (es. 256x256)
+        input_shape = tf.shape(user)
+        
+        # FIX: Appiattiamo gli input a 1D (es. 65536,) per renderli compatibili 
+        # con i layer Dense addestrati su batch 1D.
+        user_flat = tf.reshape(user, [-1])
+        item_flat = tf.reshape(item, [-1])
+        
+        user_mf_e = self.user_mf_embedding(user_flat)
+        item_mf_e = self.item_mf_embedding(item_flat)
+        user_mlp_e = self.user_mlp_embedding(user_flat)
+        item_mlp_e = self.item_mlp_embedding(item_flat)
+        
         if self.is_mf_train:
-            mf_output = user_mf_e * item_mf_e  # [batch_size, embedding_size]
+            mf_output = user_mf_e * item_mf_e
         if self.is_mlp_train:
-            mlp_output = self.mlp_layers(tf.concat([user_mlp_e, item_mlp_e], -1))  # [batch_size, layers[-1]]
+            mlp_output = self.mlp_layers(tf.concat([user_mlp_e, item_mlp_e], -1))
+            
         if self.is_mf_train and self.is_mlp_train:
             output = self.sigmoid(self.predict_layer(tf.concat([mf_output, mlp_output], -1)))
         elif self.is_mf_train:
@@ -141,7 +152,9 @@ class NeuralMatrixFactorizationModel(keras.Model):
             output = self.sigmoid(self.predict_layer(mlp_output))
         else:
             raise RuntimeError('mf_train and mlp_train can not be False at the same time')
-        return tf.squeeze(output)
+            
+        # FIX: Rimodelliamo l'output alla forma originale della griglia (Batch_Users, Batch_Items)
+        return tf.reshape(output, input_shape)
 
     @tf.function
     def get_top_k(self, preds, train_mask, k=100):

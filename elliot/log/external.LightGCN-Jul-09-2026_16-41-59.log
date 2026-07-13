@@ -1,0 +1,8 @@
+2026-07-09 16:42:50.391312: I Loading parameters
+2026-07-09 16:42:50.391312: I Parameter lr set to 0.001
+2026-07-09 16:42:50.391312: I Parameter factors set to 64
+2026-07-09 16:42:50.391312: I Parameter l_w set to 0.0001
+2026-07-09 16:42:50.391312: I Parameter n_layers set to 1
+2026-07-09 16:45:21.736094: I Epoch 1/1 loss 437479.17093
+2026-07-09 16:45:21.738227: I Writing recommendations at: C:\Users\shefai\Desktop\third_party recsys audit\third-party-recsys-audit_\elliot\results\lightgcn\gowalla
+2026-07-09 16:45:23.524127: I ******************************************

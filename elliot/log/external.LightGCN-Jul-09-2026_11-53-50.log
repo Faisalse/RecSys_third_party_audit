@@ -1,0 +1,5 @@
+2026-07-09 11:53:58.470820: I Loading parameters
+2026-07-09 11:53:58.472958: I Parameter lr set to 0.001
+2026-07-09 11:53:58.475581: I Parameter factors set to 256
+2026-07-09 11:53:58.480605: I Parameter l_w set to 0.001
+2026-07-09 11:53:58.482599: I Parameter n_layers set to 2

@@ -1,0 +1,2 @@
+Memory usuage (GB)	train_time (s)
+6.352780818939209	56781.06604933739

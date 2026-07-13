@@ -1,2 +1,0 @@
-model	nDCG	MRR	Recall	HR
-MultiDAE_seed=42_e=20_bs=512_intermediate_dim=600_latent_dim=200_reg_lambda=0$01_lr=0$001_dropout_pkeep=0$0	0.08829555135629533	0.17101308631684467	0.09136218334571097	0.35152451232767007

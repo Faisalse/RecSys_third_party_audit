@@ -1,0 +1,2 @@
+model	nDCG	Recall
+NGCF_seed=42_e=400_bs=1024_lr=0$0001_factors=64_l_w=1e-05_n_layers=1_weight_size=64_node_dropout=0$1_message_dropout=0$1	0.11614124147394973	0.10532594222026145

@@ -1,0 +1,2 @@
+train_time (s)	Memory usuage (GB)
+1,357,653.56	3.8826394081115723

@@ -55,6 +55,8 @@ class NeuMF(RecMixin, BaseRecommenderModel):
     @init_charger
     def __init__(self, data, config, params, *args, **kwargs):
 
+        self.lc_logger = getattr(config, "lc_logger", None)
+
         self._params_list = [
             ("_learning_rate", "lr", "lr", 0.001, None, None),
             ("_mf_factors", "mf_factors", "mffactors", 10, int, None),
@@ -62,6 +64,7 @@ class NeuMF(RecMixin, BaseRecommenderModel):
             #("_mlp_factors", "mlp_factors", "mlpfactors", 10, int, None),
             #("_mlp_hidden_size", "mlp_hidden_size", "mlpunits", "(64,32)", lambda x: list(make_tuple(str(x))), lambda x: self._batch_remove(str(x), " []").replace(",", "-")),
             ("_dropout", "dropout", "drop", 0, None, None),
+            ("_batch_eval", "batch_eval", "batch_eval", 256, None, None),
             ("_is_mf_train", "is_mf_train", "mftrain", True, None, None),
             ("_is_mlp_train", "is_mlp_train", "mlptrain", True, None, None),
             ("_m", "m", "m", 0, int, None)
@@ -95,6 +98,7 @@ class NeuMF(RecMixin, BaseRecommenderModel):
         if self._restore:
             return self.restore_weights()
 
+        self.lc_logger.start_training()
         for it in self.iterate(self._epochs):
             loss = 0
             steps = 0
@@ -104,21 +108,27 @@ class NeuMF(RecMixin, BaseRecommenderModel):
                     loss += self._model.train_step(batch).numpy()
                     t.set_postfix({'loss': f'{loss / steps:.5f}'})
                     t.update()
+            self.lc_logger.start_evaluation()
             self.evaluate(it, loss/(it + 1))
+            self.lc_logger.end_evaluation()
+        self.lc_logger.end_training()
 
     def get_recommendations(self, k: int = 100):
         predictions_top_k_test = {}
         predictions_top_k_val = {}
-        for index, offset in enumerate(range(0, self._num_users, self._batch_size)):
-            offset_stop = min(offset + self._batch_size, self._num_users)
-            predictions = self._model.get_recs(
-                (
-                    np.repeat(np.array(list(range(offset, offset_stop)))[:, None], repeats=self._num_items, axis=1),
-                    np.array([self._i_items_set for _ in range(offset, offset_stop)])
+        for index, offset in enumerate(range(0, self._num_users, self._batch_eval)):
+            offset_stop = min(offset + self._batch_eval, self._num_users)
+            predictions = np.empty((offset_stop - offset, self._num_items))
+            for item_index, item_offset in enumerate(range(0, self._num_items, self._batch_eval)):
+                item_offset_stop = min(item_offset + self._batch_eval, self._num_items)
+                p = self._model.get_recs(
+                    (
+                        np.repeat(np.array(list(range(offset, offset_stop)))[:, None], repeats=item_offset_stop - item_offset, axis=1),
+                        np.array([self._i_items_set[item_offset: item_offset_stop] for _ in range(offset, offset_stop)])
+                    )
                 )
-            )
+                predictions[:, item_offset: item_offset_stop] = p.numpy()
             recs_val, recs_test = self.process_protocol(k, predictions, offset, offset_stop)
-
             predictions_top_k_val.update(recs_val)
             predictions_top_k_test.update(recs_test)
         return predictions_top_k_val, predictions_top_k_test

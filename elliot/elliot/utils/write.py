@@ -37,10 +37,31 @@ def store_recommendation(recommendations, path=""):
     Store recommendation list (top-k)
     :return:
     """
-    if "UserID" in recommendations:
-        del recommendations["UserID"]
+
     with open(path, 'w') as out:
-        out.write("UserID\tItemID\tscore\n")
         for u, recs in recommendations.items():
             for i, value in recs:
                 out.write(str(u) + '\t' + str(i) + '\t' + str(value) + '\n')
+
+
+def store_recommendation_with_test(recommendations, test_dict, path=""):
+    """
+    Store recommendation list together with ground-truth test items.
+
+    Output format:
+    user_id    recommended_item_id    score    test_items
+    """
+    with open(path, "w") as out:
+        out.write("user_id\trecommended_item_id\tscore\ttest_items\n")
+
+        for u, recs in recommendations.items():
+            test_items = test_dict.get(u, {})
+            test_items = " ".join(map(str, test_items.keys()))
+
+            for i, value in recs:
+                out.write(
+                    str(u) + "\t" +
+                    str(i) + "\t" +
+                    str(value) + "\t" +
+                    test_items + "\n"
+                )

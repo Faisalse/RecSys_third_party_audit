@@ -1,0 +1,2 @@
+model	nDCG	Recall
+LightGCN_seed=42_e=1000_bs=8192_lr=0$001_factors=64_l_w=0$0001_n_layers=1	0.02214355861469113	0.021133148070338028

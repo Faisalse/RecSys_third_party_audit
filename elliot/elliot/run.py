@@ -10,38 +10,81 @@ __email__ = 'vitowalter.anelli@poliba.it, claudio.pomo@poliba.it'
 import importlib
 import sys
 from os import path
-
+from pathlib import Path
 import numpy as np
 from hyperopt import Trials, fmin
+import os
+import yaml
+import sys
+import os
+import time
+import gc
+import torch
+import pandas as pd
+# Ottieni la cartella corrente (.../elliot/elliot)
+current_dir = os.path.dirname(os.path.abspath(__file__))
+
+# Sali al primo livello genitore (.../elliot)
+parent_dir = os.path.dirname(current_dir)
+
+# Sali al "nonno" (grandparent), ovvero la root del progetto (.../master)
+# È qui che si trova la cartella 'logger' (o 'lifecycle_logger')
+grandparent_dir = os.path.dirname(parent_dir)
+
+# Aggiungi la root al path di sistema
+sys.path.append(grandparent_dir)
+
+# Ora l'import funzionerà perché parent_dir è nel path
+from lifecycle_logger.lifecycle_logger import LifecycleLogger
 
 import elliot.hyperoptimization as ho
 from elliot.namespace.namespace_model_builder import NameSpaceBuilder
 from elliot.result_handler.result_handler import ResultHandler, HyperParameterStudy, StatTest
 from elliot.utils import logging as logging_project
 
-_rstate = np.random.RandomState(42)
+_rstate = np.random.default_rng(42)
 here = path.abspath(path.dirname(__file__))
 
 print(u'''
-__/\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\___/\\\\\\\\\\\\______/\\\\\\\\\\\\_________________________________________        
- _\\/\\\\\\///////////___\\////\\\\\\_____\\////\\\\\\_________________________________________       
-  _\\/\\\\\\_________________\\/\\\\\\________\\/\\\\\\______/\\\\\\_____________________/\\\\\\______      
-   _\\/\\\\\\\\\\\\\\\\\\\\\\_________\\/\\\\\\________\\/\\\\\\_____\\///_______/\\\\\\\\\\______/\\\\\\\\\\\\\\\\\\\\\\_     
-    _\\/\\\\\\///////__________\\/\\\\\\________\\/\\\\\\______/\\\\\\____/\\\\\\///\\\\\\___\\////\\\\\\////__    
-     _\\/\\\\\\_________________\\/\\\\\\________\\/\\\\\\_____\\/\\\\\\___/\\\\\\__\\//\\\\\\_____\\/\\\\\\______   
-      _\\/\\\\\\_________________\\/\\\\\\________\\/\\\\\\_____\\/\\\\\\__\\//\\\\\\__/\\\\\\______\\/\\\\\\_/\\\\__  
-       _\\/\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\___/\\\\\\\\\\\\\\\\\\___/\\\\\\\\\\\\\\\\\\__\\/\\\\\\___\\///\\\\\\\\\\/_______\\//\\\\\\\\\\___ 
-        _\\///////////////___\\/////////___\\/////////___\\///______\\/////__________\\/////____''')
 
-print(f'Version Number: {__version__}')
+  /\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\   /\\\\\\\\\\\\      /\\\\\\\\\\\\                         ''' + f'Version: {__version__}' + '''                              
+  \\/\\\\\\///////////   \\////\\\\\\     \\////\\\\\\                                           
+   \\/\\\\\\                 \\/\\\\\\        \\/\\\\\\      /\\\\\\                     /\\\\\\       
+    \\/\\\\\\\\\\\\\\\\\\\\\\         \\/\\\\\\        \\/\\\\\\     \\///       /\\\\\\\\\\      /\\\\\\\\\\\\\\\\\\\\\\     
+     \\/\\\\\\///////          \\/\\\\\\        \\/\\\\\\      /\\\\\\    /\\\\\\///\\\\\\   \\////\\\\\\////     
+      \\/\\\\\\                 \\/\\\\\\        \\/\\\\\\     \\/\\\\\\   /\\\\\\  \\//\\\\\\     \\/\\\\\\    
+       \\/\\\\\\                 \\/\\\\\\        \\/\\\\\\     \\/\\\\\\  \\//\\\\\\  /\\\\\\      \\/\\\\\\ /\\\\   
+        \\/\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\   /\\\\\\\\\\\\\\\\\\   /\\\\\\\\\\\\\\\\\\  \\/\\\\\\   \\///\\\\\\\\\\/       \\//\\\\\\\\\\  
+         \\///////////////   \\/////////   \\/////////   \\///      \\/////          \\/////    
+         ''')
 
+def run_experiment(config_path: str = '', model_name = None, dataset_name = None):
+    
+    start = time.time()
+    with open(config_path, 'r') as f:
+        config_file = yaml.load(f, Loader=yaml.SafeLoader)
+    
+    
+    save_time_memory_results_path = config_file["experiment"]["path_output_rec_result"] +"time_memory_complexity/"
+    save_time_memory_results_path = Path(save_time_memory_results_path)
+    
+    gc.collect()
 
-def run_experiment(config_path: str = ''):
+    # Clear CUDA memory only if GPU/CUDA is available
+    if torch.cuda.is_available():
+        torch.cuda.reset_peak_memory_stats()
+        torch.cuda.empty_cache()
+        torch.cuda.synchronize()
+    else:
+        print("CUDA is not available. Running on CPU.")
+    
     builder = NameSpaceBuilder(config_path, here, path.abspath(path.dirname(config_path)))
     base = builder.base
     config_test(builder, base)
     logging_project.init(base.base_namespace.path_logger_config, base.base_namespace.path_log_folder)
     logger = logging_project.get_logger("__main__")
+    lc_logger = LifecycleLogger(f"results/{dataset_name}-{model_name}.txt")
+    lc_logger.start_experiment(model_name)
 
     if base.base_namespace.version != __version__:
         logger.error(f'Your config file use a different version of Elliot! '
@@ -54,20 +97,26 @@ def run_experiment(config_path: str = ''):
     logger.info("Start experiment")
     base.base_namespace.evaluation.relevance_threshold = getattr(base.base_namespace.evaluation, "relevance_threshold",
                                                                  0)
+    base.base_namespace.lc_logger = lc_logger
     res_handler = ResultHandler(rel_threshold=base.base_namespace.evaluation.relevance_threshold)
     hyper_handler = HyperParameterStudy(rel_threshold=base.base_namespace.evaluation.relevance_threshold)
+    lc_logger.start_preprocessing()
     dataloader_class = getattr(importlib.import_module("elliot.dataset"), base.base_namespace.data_config.dataloader)
     dataloader = dataloader_class(config=base.base_namespace)
+    lc_logger.end_preprocessing()
     data_test_list = dataloader.generate_dataobjects()
+    all_trials = {}
     for key, model_base in builder.models():
         test_results = []
         test_trials = []
+        all_trials[key] = []
         for test_fold_index, data_test in enumerate(data_test_list):
             logging_project.prepare_logger(key, base.base_namespace.path_log_folder)
             if key.startswith("external."):
                 spec = importlib.util.spec_from_file_location("external",
                                                               path.relpath(base.base_namespace.external_models_path))
                 external = importlib.util.module_from_spec(spec)
+                external.backend = base.base_namespace.backend
                 sys.modules[spec.name] = external
                 spec.loader.exec_module(external)
                 model_class = getattr(importlib.import_module("external"), key.split(".", 1)[1])
@@ -77,7 +126,7 @@ def run_experiment(config_path: str = ''):
             model_placeholder = ho.ModelCoordinator(data_test, base.base_namespace, model_base, model_class,
                                                     test_fold_index)
             if isinstance(model_base, tuple):
-                logger.info(f"Tuning begun for {model_class.__name__}\\n")
+                logger.info(f"Tuning begun for {model_class.__name__}\n")
                 trials = Trials()
                 fmin(model_placeholder.objective,
                      space=model_base[1],
@@ -98,9 +147,10 @@ def run_experiment(config_path: str = ''):
                 # aggiunta a lista performance test
                 test_results.append(trials._trials[min_val]["result"])
                 test_trials.append(trials)
+                all_trials[key].append([el["result"] for el in trials._trials])
                 logger.info(f"Tuning ended for {model_class.__name__}")
             else:
-                logger.info(f"Training begun for {model_class.__name__}\\n")
+                logger.info(f"Training begun for {model_class.__name__}\n")
                 single = model_placeholder.single()
 
                 ############################################
@@ -111,23 +161,47 @@ def run_experiment(config_path: str = ''):
 
                 # aggiunta a lista performance test
                 test_results.append(single)
+                test_trials.append(single)
+                all_trials[key].append([single])
                 logger.info(f"Training ended for {model_class.__name__}")
-
-            logger.info(f"Loss:\\t{best_model_loss}")
-            logger.info(f"Best Model params:\\t{best_model_params}")
-            logger.info(f"Best Model results:\\t{best_model_results}")
+            
+            time_memory_complexity_df = pd.DataFrame()
+            if torch.cuda.is_available():
+                peak_memory_bytes = torch.cuda.max_memory_allocated()
+                peak_memory_gb = peak_memory_bytes / 1024**3
+                time_memory_complexity_df["Memory usuage (GB)"] = [peak_memory_gb]
+                
+            train_complete = time.time() - start
+            time_memory_complexity_df["train_time (s)"] = [train_complete]
+            os.makedirs(save_time_memory_results_path, exist_ok=True)
+            file_name = str(test_fold_index)+"_time_memory_complexity.txt"
+            time_memory_complexity_df.to_csv(save_time_memory_results_path / file_name, index=False, sep = "\t")
+            
+            
+            
+            logger.info(f"Loss:\t{best_model_loss}")
+            logger.info(f"Best Model params:\t{best_model_params}")
+            logger.info(f"Best Model results:\t{best_model_results}")
+            lc_logger._log(best_model_results)
 
         # Migliore sui test, aggiunta a performance totali
         min_val = np.argmin([i["loss"] for i in test_results])
 
+       
         res_handler.add_oneshot_recommender(**test_results[min_val])
-
+        
         if isinstance(model_base, tuple):
             hyper_handler.add_trials(test_trials[min_val])
+        all_trials[key] = all_trials[key][min_val]
 
     # res_handler.save_results(output=base.base_namespace.path_output_rec_performance)
     hyper_handler.save_trials(output=base.base_namespace.path_output_rec_performance)
+    # hyper_handler.save_trials_std(output=base.base_namespace.path_output_rec_performance)
+    # hyper_handler.save_trials_times(output=base.base_namespace.path_output_rec_performance)
     res_handler.save_best_results(output=base.base_namespace.path_output_rec_performance)
+    # res_handler.save_best_times(output=base.base_namespace.path_output_rec_performance)
+    # res_handler.save_best_results_std(output=base.base_namespace.path_output_rec_performance)
+    # res_handler.save_best_results_mean(output=base.base_namespace.path_output_rec_performance)
     cutoff_k = getattr(base.base_namespace.evaluation, "cutoffs", [base.base_namespace.top_k])
     cutoff_k = cutoff_k if isinstance(cutoff_k, list) else [cutoff_k]
     first_metric = base.base_namespace.evaluation.simple_metrics[
@@ -137,7 +211,9 @@ def run_experiment(config_path: str = ''):
     if hasattr(base.base_namespace,
                "print_results_as_triplets") and base.base_namespace.print_results_as_triplets == True:
         res_handler.save_best_results_as_triplets(output=base.base_namespace.path_output_rec_performance)
+        # res_handler.save_best_results_std_as_triplets(output=base.base_namespace.path_output_rec_performance)
         hyper_handler.save_trials_as_triplets(output=base.base_namespace.path_output_rec_performance)
+        # hyper_handler.save_trials_as_triplets_std(output=base.base_namespace.path_output_rec_performance)
     if hasattr(base.base_namespace.evaluation, "paired_ttest") and base.base_namespace.evaluation.paired_ttest:
         res_handler.save_best_statistical_results(stat_test=StatTest.PairedTTest,
                                                   output=base.base_namespace.path_output_rec_performance)
@@ -146,6 +222,8 @@ def run_experiment(config_path: str = ''):
                                                   output=base.base_namespace.path_output_rec_performance)
 
     logger.info("End experiment")
+    lc_logger.end_experiment()
+    
 
 
 def _reset_verbose_option(model):

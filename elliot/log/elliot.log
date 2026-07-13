@@ -1,72 +1,1035 @@
-2026-05-11 22:09:36.932922: I Start experiment
-2026-05-11 22:09:37.046010: I There will be the splitting
-2026-05-11 22:09:37.232176: I C:\Users\shefai\Desktop\third_party recsys audit\third-party-recsys-audit_\elliot\data\movielens_1m\dataset.tsv - Loaded
-2026-05-11 22:09:44.197521: I Test Fold 0
-2026-05-11 22:09:47.292341: I Statistics	Users:	5949	Items:	2810	Transactions:	454860	Sparsity:	0.9727900678902343
-2026-05-11 22:09:48.489640: I Test Fold 1
-2026-05-11 22:09:51.563338: I Statistics	Users:	5949	Items:	2810	Transactions:	454860	Sparsity:	0.9727900678902343
-2026-05-11 22:09:52.774416: I Test Fold 2
-2026-05-11 22:09:55.796351: I Statistics	Users:	5949	Items:	2810	Transactions:	454860	Sparsity:	0.9727900678902343
-2026-05-11 22:09:57.031715: I Test Fold 3
-2026-05-11 22:10:04.904316: I Statistics	Users:	5949	Items:	2810	Transactions:	454860	Sparsity:	0.9727900678902343
-2026-05-11 22:10:08.470103: I Test Fold 4
-2026-05-11 22:10:17.412633: I Statistics	Users:	5949	Items:	2810	Transactions:	454860	Sparsity:	0.9727900678902343
-2026-05-11 22:10:35.747168: I Tuning begun for NGCF\n
-2026-05-11 22:10:35.768064: I Hyperparameter tuning exploration:
-2026-05-11 22:10:35.768064: I epochs set to 50
-2026-05-11 22:10:35.768064: I factors set to 128
-2026-05-11 22:10:35.769476: I l_w set to 0.1455995931997211
-2026-05-11 22:10:35.769476: I lr set to 0.0018771771586358833
-2026-05-11 22:10:35.769476: I Exploration: Hyperparameter exploration number 1
-2026-05-11 22:10:35.770483: I Exploration: Test Fold exploration number 1
-2026-05-11 22:10:35.770483: I Exploration: Train-Validation Fold exploration number 1
-2026-05-11 22:12:15.887470: I Start experiment
-2026-05-11 22:12:15.989718: I There will be the splitting
-2026-05-11 22:12:16.157009: I C:\Users\shefai\Desktop\third_party recsys audit\third-party-recsys-audit_\elliot\data\movielens_1m\dataset.tsv - Loaded
-2026-05-11 22:12:23.349998: I Test Fold 0
-2026-05-11 22:12:26.292858: I Statistics	Users:	5949	Items:	2810	Transactions:	454860	Sparsity:	0.9727900678902343
-2026-05-11 22:12:27.519874: I Test Fold 1
-2026-05-11 22:12:31.476903: I Statistics	Users:	5949	Items:	2810	Transactions:	454860	Sparsity:	0.9727900678902343
-2026-05-11 22:12:32.633586: I Test Fold 2
-2026-05-11 22:12:35.488961: I Statistics	Users:	5949	Items:	2810	Transactions:	454860	Sparsity:	0.9727900678902343
-2026-05-11 22:12:36.656631: I Test Fold 3
-2026-05-11 22:12:39.532882: I Statistics	Users:	5949	Items:	2810	Transactions:	454860	Sparsity:	0.9727900678902343
-2026-05-11 22:12:40.691872: I Test Fold 4
-2026-05-11 22:12:43.878628: I Statistics	Users:	5949	Items:	2810	Transactions:	454860	Sparsity:	0.9727900678902343
-2026-05-11 22:12:47.846391: I Tuning begun for NGCF\n
-2026-05-11 22:12:47.846391: I Hyperparameter tuning exploration:
-2026-05-11 22:12:47.846391: I epochs set to 50
-2026-05-11 22:12:47.846391: I factors set to 128
-2026-05-11 22:12:47.846391: I l_w set to 0.1455995931997211
-2026-05-11 22:12:47.846391: I lr set to 0.0018771771586358833
-2026-05-11 22:12:47.862060: I Exploration: Hyperparameter exploration number 1
-2026-05-11 22:12:47.862060: I Exploration: Test Fold exploration number 1
-2026-05-11 22:12:47.862060: I Exploration: Train-Validation Fold exploration number 1
-2026-05-11 22:13:16.337388: I Start experiment
-2026-05-11 22:13:16.352568: I There will be the splitting
-2026-05-11 22:13:16.535542: I C:\Users\shefai\Desktop\third_party recsys audit\third-party-recsys-audit_\elliot\data\movielens_1m\dataset.tsv - Loaded
-2026-05-11 22:13:18.459149: I Test Fold 0
-2026-05-11 22:13:21.466795: I Statistics	Users:	5949	Items:	2810	Transactions:	454860	Sparsity:	0.9727900678902343
-2026-05-11 22:13:24.299622: I Tuning begun for NGCF\n
-2026-05-11 22:13:24.299622: I Hyperparameter tuning exploration:
-2026-05-11 22:13:24.299622: I epochs set to 50
-2026-05-11 22:13:24.299622: I factors set to 128
-2026-05-11 22:13:24.299622: I l_w set to 0.1455995931997211
-2026-05-11 22:13:24.299622: I lr set to 0.0018771771586358833
-2026-05-11 22:13:24.299622: I Exploration: Hyperparameter exploration number 1
-2026-05-11 22:13:24.299622: I Exploration: Test Fold exploration number 1
-2026-05-11 22:13:24.299622: I Exploration: Train-Validation Fold exploration number 1
-2026-05-11 22:14:47.506422: I Start experiment
-2026-05-11 22:14:47.534491: I There will be the splitting
-2026-05-11 22:14:47.711596: I C:\Users\shefai\Desktop\third_party recsys audit\third-party-recsys-audit_\elliot\data\movielens_1m\dataset.tsv - Loaded
-2026-05-11 22:14:49.240422: I Test Fold 0
-2026-05-11 22:14:56.650990: I Statistics	Users:	5949	Items:	2810	Transactions:	454860	Sparsity:	0.9727900678902343
-2026-05-11 22:15:05.178052: I Tuning begun for NGCF\n
-2026-05-11 22:15:05.210333: I Hyperparameter tuning exploration:
-2026-05-11 22:15:05.210333: I epochs set to 50
-2026-05-11 22:15:05.211420: I factors set to 128
-2026-05-11 22:15:05.212248: I l_w set to 0.1455995931997211
-2026-05-11 22:15:05.212248: I lr set to 0.0018771771586358833
-2026-05-11 22:15:05.212248: I Exploration: Hyperparameter exploration number 1
-2026-05-11 22:15:05.212248: I Exploration: Test Fold exploration number 1
-2026-05-11 22:15:05.212248: I Exploration: Train-Validation Fold exploration number 1
+2026-07-08 12:02:00.014853: I Start experiment
+2026-07-08 14:24:32.316075: I Start experiment
+2026-07-08 14:24:57.664090: I Start experiment
+2026-07-08 14:24:57.694365: I There will be the splitting
+2026-07-08 14:24:58.102630: I /elliot_wrap/elliot/data/movielens_1m/dataset.tsv - Loaded
+2026-07-08 14:25:00.771847: I Test Fold 0
+2026-07-08 14:25:24.411434: I Statistics	Users:	6040	Items:	3693	Transactions:	897450	Sparsity:	0.9597659255114832
+2026-07-08 14:56:41.468768: I Start experiment
+2026-07-08 14:56:41.495904: I There will be the splitting
+2026-07-08 14:56:41.913585: I /elliot_wrap/elliot/data/movielens_1m/dataset.tsv - Loaded
+2026-07-08 14:56:44.606624: I Test Fold 0
+2026-07-08 14:57:08.677479: I Statistics	Users:	6040	Items:	3693	Transactions:	897450	Sparsity:	0.9597659255114832
+2026-07-08 15:00:16.037199: I Start experiment
+2026-07-08 15:00:16.063456: I There will be the splitting
+2026-07-08 15:00:16.475519: I /elliot_wrap/elliot/data/movielens_1m/dataset.tsv - Loaded
+2026-07-08 15:00:19.216365: I Test Fold 0
+2026-07-08 15:00:43.269486: I Statistics	Users:	6040	Items:	3693	Transactions:	897450	Sparsity:	0.9597659255114832
+2026-07-08 15:00:51.606193: I Tuning begun for LightGCN
+
+2026-07-08 15:03:54.655276: I Start experiment
+2026-07-08 15:03:54.681520: I There will be the splitting
+2026-07-08 15:03:55.102682: I /elliot_wrap/elliot/data/movielens_1m/dataset.tsv - Loaded
+2026-07-08 15:03:57.831391: I Test Fold 0
+2026-07-08 15:04:21.246376: I Statistics	Users:	6040	Items:	3693	Transactions:	897450	Sparsity:	0.9597659255114832
+2026-07-08 15:04:29.407516: I Tuning begun for LightGCN
+
+2026-07-08 15:10:46.241833: I Start experiment
+2026-07-08 15:10:46.267777: I There will be the splitting
+2026-07-08 15:10:46.667024: I /elliot_wrap/elliot/data/movielens_1m/dataset.tsv - Loaded
+2026-07-08 15:10:49.435744: I Test Fold 0
+2026-07-08 15:11:13.214735: I Statistics	Users:	6040	Items:	3693	Transactions:	897450	Sparsity:	0.9597659255114832
+2026-07-08 15:11:21.030598: I Tuning begun for LightGCN
+
+2026-07-08 15:11:21.035907: I Hyperparameter tuning exploration:
+2026-07-08 15:11:21.035993: I Exploration for factors. Value extracted: 256
+2026-07-08 15:11:21.036067: I Exploration for n_layers. Value extracted: 2
+2026-07-08 15:11:21.036146: I Exploration: Hyperparameter exploration number 1
+2026-07-08 15:11:21.036228: I Exploration: Test Fold exploration number 1
+2026-07-08 15:11:21.036304: I Exploration: Train-Validation Fold exploration number 1
+2026-07-08 15:11:50.598246: I 
+2026-07-08 15:11:50.598638: I Test Evaluation results
+2026-07-08 15:11:50.605141: I Cut-off: 10
+2026-07-08 15:11:50.605266: I Eval Time: 0.7240045070648193
+2026-07-08 15:11:50.610481: I Results
+2026-07-08 15:11:50.615684: I nDCG	0.11397
+2026-07-08 15:11:50.615780: I Precision	0.10901
+2026-07-08 15:11:50.615852: I Recall	0.0746
+2026-07-08 15:11:50.615922: I HR	0.54603
+2026-07-08 15:11:50.615995: I MAP	0.13114
+2026-07-08 15:12:13.478604: I 
+2026-07-08 15:12:13.485812: I Test Evaluation results
+2026-07-08 15:12:13.485907: I Cut-off: 10
+2026-07-08 15:12:13.485999: I Eval Time: 0.6600916385650635
+2026-07-08 15:12:13.486090: I Results
+2026-07-08 15:12:13.486188: I nDCG	0.1323
+2026-07-08 15:12:13.486285: I Precision	0.12425
+2026-07-08 15:12:13.486407: I Recall	0.08785
+2026-07-08 15:12:13.486503: I HR	0.59934
+2026-07-08 15:12:13.486605: I MAP	0.15159
+2026-07-08 15:12:36.977631: I 
+2026-07-08 15:12:36.985906: I Test Evaluation results
+2026-07-08 15:12:36.986020: I Cut-off: 10
+2026-07-08 15:12:36.986103: I Eval Time: 0.6719198226928711
+2026-07-08 15:12:36.986173: I Results
+2026-07-08 15:12:36.986240: I nDCG	0.16838
+2026-07-08 15:12:36.986357: I Precision	0.15301
+2026-07-08 15:12:36.986461: I Recall	0.11368
+2026-07-08 15:12:36.986541: I HR	0.67053
+2026-07-08 15:12:36.986659: I MAP	0.19159
+2026-07-08 15:12:59.948227: I 
+2026-07-08 15:12:59.948732: I Test Evaluation results
+2026-07-08 15:12:59.959716: I Cut-off: 10
+2026-07-08 15:12:59.959839: I Eval Time: 0.6608066558837891
+2026-07-08 15:12:59.959935: I Results
+2026-07-08 15:12:59.960045: I nDCG	0.18423
+2026-07-08 15:12:59.960154: I Precision	0.16722
+2026-07-08 15:12:59.965765: I Recall	0.12611
+2026-07-08 15:12:59.965862: I HR	0.70033
+2026-07-08 15:12:59.965970: I MAP	0.21055
+2026-07-08 15:13:23.299132: I 
+2026-07-08 15:13:23.299683: I Test Evaluation results
+2026-07-08 15:13:23.310933: I Cut-off: 10
+2026-07-08 15:13:23.311041: I Eval Time: 0.6862025260925293
+2026-07-08 15:13:23.311137: I Results
+2026-07-08 15:13:23.311221: I nDCG	0.19435
+2026-07-08 15:13:23.311313: I Precision	0.17834
+2026-07-08 15:13:23.311446: I Recall	0.13572
+2026-07-08 15:13:23.311530: I HR	0.72401
+2026-07-08 15:13:23.311631: I MAP	0.22261
+2026-07-08 15:13:46.487775: I 
+2026-07-08 15:13:46.495807: I Test Evaluation results
+2026-07-08 15:13:46.495932: I Cut-off: 10
+2026-07-08 15:13:46.496038: I Eval Time: 0.6569004058837891
+2026-07-08 15:13:46.496128: I Results
+2026-07-08 15:13:46.496228: I nDCG	0.20334
+2026-07-08 15:13:46.496312: I Precision	0.18772
+2026-07-08 15:13:46.496439: I Recall	0.14398
+2026-07-08 15:13:46.496520: I HR	0.74603
+2026-07-08 15:13:46.496637: I MAP	0.23357
+2026-07-08 15:14:09.969471: I 
+2026-07-08 15:14:09.980161: I Test Evaluation results
+2026-07-08 15:14:09.980289: I Cut-off: 10
+2026-07-08 15:14:09.980417: I Eval Time: 0.690340518951416
+2026-07-08 15:14:09.980523: I Results
+2026-07-08 15:14:09.980635: I nDCG	0.21019
+2026-07-08 15:14:09.980738: I Precision	0.1946
+2026-07-08 15:14:09.980839: I Recall	0.15012
+2026-07-08 15:14:09.986038: I HR	0.7553
+2026-07-08 15:14:09.986125: I MAP	0.24142
+2026-07-08 15:14:33.602047: I 
+2026-07-08 15:14:33.613678: I Test Evaluation results
+2026-07-08 15:14:33.613772: I Cut-off: 10
+2026-07-08 15:14:33.613855: I Eval Time: 0.681443452835083
+2026-07-08 15:14:33.613949: I Results
+2026-07-08 15:14:33.614057: I nDCG	0.21722
+2026-07-08 15:14:33.614145: I Precision	0.20098
+2026-07-08 15:14:33.614247: I Recall	0.15554
+2026-07-08 15:14:33.614357: I HR	0.76705
+2026-07-08 15:14:33.614461: I MAP	0.24922
+2026-07-08 15:14:57.679983: I 
+2026-07-08 15:14:57.680107: I Test Evaluation results
+2026-07-08 15:14:57.680213: I Cut-off: 10
+2026-07-08 15:14:57.680403: I Eval Time: 0.6951432228088379
+2026-07-08 15:14:57.680508: I Results
+2026-07-08 15:14:57.680630: I nDCG	0.2217
+2026-07-08 15:14:57.680735: I Precision	0.20551
+2026-07-08 15:14:57.680838: I Recall	0.15959
+2026-07-08 15:14:57.680939: I HR	0.77666
+2026-07-08 15:14:57.681038: I MAP	0.25435
+2026-07-08 15:15:20.929788: I 
+2026-07-08 15:15:20.941710: I Test Evaluation results
+2026-07-08 15:15:20.941819: I Cut-off: 10
+2026-07-08 15:15:20.941904: I Eval Time: 0.6880269050598145
+2026-07-08 15:15:20.941995: I Results
+2026-07-08 15:15:20.942089: I nDCG	0.22693
+2026-07-08 15:15:20.942184: I Precision	0.21066
+2026-07-08 15:15:20.942274: I Recall	0.16472
+2026-07-08 15:15:20.942389: I HR	0.7851
+2026-07-08 15:15:20.942485: I MAP	0.25937
+2026-07-08 15:15:20.959603: I Hyperparameter tuning exploration:
+2026-07-08 15:15:20.959693: I Exploration for factors. Value extracted: 64
+2026-07-08 15:15:20.959771: I Exploration for n_layers. Value extracted: 3
+2026-07-08 15:15:20.959867: I Exploration: Hyperparameter exploration number 2
+2026-07-08 15:15:20.959957: I Exploration: Test Fold exploration number 1
+2026-07-08 15:15:20.960041: I Exploration: Train-Validation Fold exploration number 1
+2026-07-08 15:15:46.899612: I 
+2026-07-08 15:15:46.907513: I Test Evaluation results
+2026-07-08 15:15:46.907640: I Cut-off: 10
+2026-07-08 15:15:46.907741: I Eval Time: 0.7489454746246338
+2026-07-08 15:15:46.907850: I Results
+2026-07-08 15:15:46.907943: I nDCG	0.11201
+2026-07-08 15:15:46.908065: I Precision	0.10798
+2026-07-08 15:15:46.908180: I Recall	0.073
+2026-07-08 15:15:46.908274: I HR	0.53858
+2026-07-08 15:15:46.908417: I MAP	0.12922
+2026-07-08 15:16:09.697269: I 
+2026-07-08 15:16:09.705757: I Test Evaluation results
+2026-07-08 15:16:09.705878: I Cut-off: 10
+2026-07-08 15:16:09.705976: I Eval Time: 0.6979553699493408
+2026-07-08 15:16:09.706072: I Results
+2026-07-08 15:16:09.706170: I nDCG	0.11324
+2026-07-08 15:16:09.706263: I Precision	0.10887
+2026-07-08 15:16:09.706383: I Recall	0.07449
+2026-07-08 15:16:09.706460: I HR	0.54487
+2026-07-08 15:16:09.712002: I MAP	0.13016
+2026-07-08 15:16:32.557496: I 
+2026-07-08 15:16:32.567475: I Test Evaluation results
+2026-07-08 15:16:32.567583: I Cut-off: 10
+2026-07-08 15:16:32.567665: I Eval Time: 0.6817436218261719
+2026-07-08 15:16:32.567742: I Results
+2026-07-08 15:16:32.567812: I nDCG	0.11944
+2026-07-08 15:16:32.567881: I Precision	0.11359
+2026-07-08 15:16:32.567949: I Recall	0.07909
+2026-07-08 15:16:32.568041: I HR	0.56374
+2026-07-08 15:16:32.568136: I MAP	0.13665
+2026-07-08 15:16:54.852710: I 
+2026-07-08 15:16:54.859495: I Test Evaluation results
+2026-07-08 15:16:54.865028: I Cut-off: 10
+2026-07-08 15:16:54.865118: I Eval Time: 0.6577317714691162
+2026-07-08 15:16:54.865197: I Results
+2026-07-08 15:16:54.865274: I nDCG	0.13302
+2026-07-08 15:16:54.870501: I Precision	0.12301
+2026-07-08 15:16:54.870616: I Recall	0.08603
+2026-07-08 15:16:54.870693: I HR	0.58791
+2026-07-08 15:16:54.870772: I MAP	0.15176
+2026-07-08 15:17:17.729569: I 
+2026-07-08 15:17:17.740745: I Test Evaluation results
+2026-07-08 15:17:17.740888: I Cut-off: 10
+2026-07-08 15:17:17.740990: I Eval Time: 0.6871364116668701
+2026-07-08 15:17:17.741097: I Results
+2026-07-08 15:17:17.741191: I nDCG	0.14815
+2026-07-08 15:17:17.741289: I Precision	0.13546
+2026-07-08 15:17:17.741402: I Recall	0.09608
+2026-07-08 15:17:17.741501: I HR	0.61987
+2026-07-08 15:17:17.741612: I MAP	0.16927
+2026-07-08 15:17:40.339646: I 
+2026-07-08 15:17:40.339784: I Test Evaluation results
+2026-07-08 15:17:40.339871: I Cut-off: 10
+2026-07-08 15:17:40.350192: I Eval Time: 0.66275954246521
+2026-07-08 15:17:40.350302: I Results
+2026-07-08 15:17:40.350412: I nDCG	0.15834
+2026-07-08 15:17:40.350494: I Precision	0.14389
+2026-07-08 15:17:40.350600: I Recall	0.10328
+2026-07-08 15:17:40.356174: I HR	0.64106
+2026-07-08 15:17:40.356260: I MAP	0.18161
+2026-07-08 15:18:02.541094: I 
+2026-07-08 15:18:02.552457: I Test Evaluation results
+2026-07-08 15:18:02.552616: I Cut-off: 10
+2026-07-08 15:18:02.552695: I Eval Time: 0.6921501159667969
+2026-07-08 15:18:02.552769: I Results
+2026-07-08 15:18:02.552844: I nDCG	0.16372
+2026-07-08 15:18:02.552930: I Precision	0.1493
+2026-07-08 15:18:02.553016: I Recall	0.10878
+2026-07-08 15:18:02.553109: I HR	0.6543
+2026-07-08 15:18:02.553186: I MAP	0.18794
+2026-07-08 15:18:24.922218: I 
+2026-07-08 15:18:24.922728: I Test Evaluation results
+2026-07-08 15:18:24.932968: I Cut-off: 10
+2026-07-08 15:18:24.933074: I Eval Time: 0.6892590522766113
+2026-07-08 15:18:24.933154: I Results
+2026-07-08 15:18:24.933226: I nDCG	0.16825
+2026-07-08 15:18:24.933291: I Precision	0.15333
+2026-07-08 15:18:24.933799: I Recall	0.11285
+2026-07-08 15:18:24.933883: I HR	0.66159
+2026-07-08 15:18:24.933958: I MAP	0.19391
+2026-07-08 15:18:47.826374: I 
+2026-07-08 15:18:47.826575: I Test Evaluation results
+2026-07-08 15:18:47.826928: I Cut-off: 10
+2026-07-08 15:18:47.839480: I Eval Time: 0.6895008087158203
+2026-07-08 15:18:47.839640: I Results
+2026-07-08 15:18:47.839717: I nDCG	0.17235
+2026-07-08 15:18:47.839789: I Precision	0.15801
+2026-07-08 15:18:47.839877: I Recall	0.11692
+2026-07-08 15:18:47.839986: I HR	0.67517
+2026-07-08 15:18:47.840088: I MAP	0.19901
+2026-07-08 15:19:10.547965: I 
+2026-07-08 15:19:10.559566: I Test Evaluation results
+2026-07-08 15:19:10.559674: I Cut-off: 10
+2026-07-08 15:19:10.559750: I Eval Time: 0.6926827430725098
+2026-07-08 15:19:10.559819: I Results
+2026-07-08 15:19:10.565423: I nDCG	0.17711
+2026-07-08 15:19:10.565518: I Precision	0.16305
+2026-07-08 15:19:10.565601: I Recall	0.12066
+2026-07-08 15:19:10.565674: I HR	0.68609
+2026-07-08 15:19:10.565748: I MAP	0.20457
+2026-07-08 15:19:10.589432: I Hyperparameter tuning exploration:
+2026-07-08 15:19:10.594653: I Exploration for factors. Value extracted: 64
+2026-07-08 15:19:10.594730: I Exploration for n_layers. Value extracted: 2
+2026-07-08 15:19:10.594799: I Exploration: Hyperparameter exploration number 3
+2026-07-08 15:19:10.594869: I Exploration: Test Fold exploration number 1
+2026-07-08 15:19:10.594941: I Exploration: Train-Validation Fold exploration number 1
+2026-07-08 15:19:35.102038: I 
+2026-07-08 15:19:35.109484: I Test Evaluation results
+2026-07-08 15:19:35.114899: I Cut-off: 10
+2026-07-08 15:19:35.114978: I Eval Time: 0.7482783794403076
+2026-07-08 15:19:35.115047: I Results
+2026-07-08 15:19:35.115114: I nDCG	0.1122
+2026-07-08 15:19:35.115181: I Precision	0.10773
+2026-07-08 15:19:35.115242: I Recall	0.07313
+2026-07-08 15:19:35.115308: I HR	0.53858
+2026-07-08 15:19:35.115400: I MAP	0.1294
+2026-07-08 15:19:57.149307: I 
+2026-07-08 15:19:57.149465: I Test Evaluation results
+2026-07-08 15:19:57.149576: I Cut-off: 10
+2026-07-08 15:19:57.149666: I Eval Time: 0.7077169418334961
+2026-07-08 15:19:57.149755: I Results
+2026-07-08 15:19:57.149849: I nDCG	0.11442
+2026-07-08 15:19:57.149937: I Precision	0.10992
+2026-07-08 15:19:57.150034: I Recall	0.07544
+2026-07-08 15:19:57.150119: I HR	0.5505
+2026-07-08 15:19:57.150217: I MAP	0.13155
+2026-07-08 15:22:36.852969: I Start experiment
+2026-07-08 15:22:36.879225: I There will be the splitting
+2026-07-08 15:22:37.299395: I /elliot_wrap/elliot/data/movielens_1m/dataset.tsv - Loaded
+2026-07-08 15:22:40.060658: I Test Fold 0
+2026-07-08 15:23:04.384563: I Statistics	Users:	6040	Items:	3693	Transactions:	897450	Sparsity:	0.9597659255114832
+2026-07-08 15:23:10.321634: I Tuning begun for LightGCN
+
+2026-07-08 15:23:10.326910: I Hyperparameter tuning exploration:
+2026-07-08 15:23:10.326996: I Exploration for factors. Value extracted: 256
+2026-07-08 15:23:10.327072: I Exploration for n_layers. Value extracted: 2
+2026-07-08 15:23:10.327152: I Exploration: Hyperparameter exploration number 1
+2026-07-08 15:23:10.327238: I Exploration: Test Fold exploration number 1
+2026-07-08 15:23:10.327320: I Exploration: Train-Validation Fold exploration number 1
+2026-07-08 15:24:04.109038: I 
+2026-07-08 15:24:04.109177: I Test Evaluation results
+2026-07-08 15:24:04.109258: I Cut-off: 10
+2026-07-08 15:24:04.109469: I Eval Time: 0.7498540878295898
+2026-07-08 15:24:04.109898: I Results
+2026-07-08 15:24:04.117131: I nDCG	0.01157
+2026-07-08 15:24:04.117230: I Precision	0.0123
+2026-07-08 15:24:04.117311: I Recall	0.00702
+2026-07-08 15:24:04.117512: I HR	0.10629
+2026-07-08 15:24:04.117599: I MAP	0.01851
+2026-07-08 15:24:30.530115: I 
+2026-07-08 15:24:30.537854: I Test Evaluation results
+2026-07-08 15:24:30.537942: I Cut-off: 10
+2026-07-08 15:24:30.538013: I Eval Time: 0.6895532608032227
+2026-07-08 15:24:30.538084: I Results
+2026-07-08 15:24:30.538152: I nDCG	0.01157
+2026-07-08 15:24:30.538216: I Precision	0.0123
+2026-07-08 15:24:30.538382: I Recall	0.00702
+2026-07-08 15:24:30.538461: I HR	0.10629
+2026-07-08 15:24:30.538582: I MAP	0.01851
+2026-07-08 15:24:53.905195: I 
+2026-07-08 15:24:53.911971: I Test Evaluation results
+2026-07-08 15:24:53.912054: I Cut-off: 10
+2026-07-08 15:24:53.912131: I Eval Time: 0.6701054573059082
+2026-07-08 15:24:53.912197: I Results
+2026-07-08 15:24:53.912357: I nDCG	0.01157
+2026-07-08 15:24:53.912440: I Precision	0.0123
+2026-07-08 15:24:53.912512: I Recall	0.00702
+2026-07-08 15:24:53.912598: I HR	0.10629
+2026-07-08 15:24:53.912676: I MAP	0.01851
+2026-07-08 15:25:16.486648: I 
+2026-07-08 15:25:16.494681: I Test Evaluation results
+2026-07-08 15:25:16.494763: I Cut-off: 10
+2026-07-08 15:25:16.494843: I Eval Time: 0.6856732368469238
+2026-07-08 15:25:16.494938: I Results
+2026-07-08 15:25:16.495019: I nDCG	0.01157
+2026-07-08 15:25:16.495099: I Precision	0.0123
+2026-07-08 15:25:16.495183: I Recall	0.00702
+2026-07-08 15:25:16.495282: I HR	0.10629
+2026-07-08 15:25:16.495399: I MAP	0.01851
+2026-07-08 15:25:38.949843: I 
+2026-07-08 15:25:38.959734: I Test Evaluation results
+2026-07-08 15:25:38.959836: I Cut-off: 10
+2026-07-08 15:25:38.959915: I Eval Time: 0.6895027160644531
+2026-07-08 15:25:38.959995: I Results
+2026-07-08 15:25:38.960059: I nDCG	0.01157
+2026-07-08 15:25:38.960207: I Precision	0.0123
+2026-07-08 15:25:38.960280: I Recall	0.00702
+2026-07-08 15:25:38.965508: I HR	0.10629
+2026-07-08 15:25:38.965607: I MAP	0.01851
+2026-07-08 15:26:30.798214: I Start experiment
+2026-07-08 15:26:30.824386: I There will be the splitting
+2026-07-08 15:26:31.219310: I /elliot_wrap/elliot/data/movielens_1m/dataset.tsv - Loaded
+2026-07-08 15:26:33.997581: I Test Fold 0
+2026-07-08 15:26:58.704993: I Statistics	Users:	6040	Items:	3693	Transactions:	897450	Sparsity:	0.9597659255114832
+2026-07-08 15:27:06.668665: I Tuning begun for LightGCN
+
+2026-07-08 15:27:06.668803: I Hyperparameter tuning exploration:
+2026-07-08 15:27:06.668890: I Exploration for n_layers. Value extracted: 2
+2026-07-08 15:27:06.668966: I Exploration: Hyperparameter exploration number 1
+2026-07-08 15:27:06.669073: I Exploration: Test Fold exploration number 1
+2026-07-08 15:27:06.669180: I Exploration: Train-Validation Fold exploration number 1
+2026-07-08 15:27:36.646094: I 
+2026-07-08 15:27:36.646470: I Test Evaluation results
+2026-07-08 15:27:36.646584: I Cut-off: 10
+2026-07-08 15:27:36.646667: I Eval Time: 0.7303152084350586
+2026-07-08 15:27:36.646797: I Results
+2026-07-08 15:27:36.646890: I nDCG	0.11397
+2026-07-08 15:27:36.647000: I Precision	0.10901
+2026-07-08 15:27:36.647089: I Recall	0.0746
+2026-07-08 15:27:36.647203: I HR	0.54603
+2026-07-08 15:27:36.647314: I MAP	0.13114
+2026-07-08 15:27:51.709601: I Start experiment
+2026-07-08 15:27:51.734633: I There will be the splitting
+2026-07-08 15:27:52.131988: I /elliot_wrap/elliot/data/movielens_1m/dataset.tsv - Loaded
+2026-07-08 15:27:54.830634: I Test Fold 0
+2026-07-08 15:28:18.291764: I Statistics	Users:	6040	Items:	3693	Transactions:	897450	Sparsity:	0.9597659255114832
+2026-07-08 15:28:26.065401: I Training begun for LightGCN
+
+2026-07-08 15:28:26.070671: I Hyperparameters:
+2026-07-08 15:28:26.070777: I lr set to 0.001
+2026-07-08 15:28:26.070855: I epochs set to 10
+2026-07-08 15:28:26.076072: I factors set to 256
+2026-07-08 15:28:26.076151: I batch_size set to 8192
+2026-07-08 15:28:26.076222: I l_w set to 0.001
+2026-07-08 15:28:26.076297: I n_layers set to 2
+2026-07-08 15:28:26.081500: I meta set to namespace()
+2026-07-08 15:28:26.081573: I Exploration: Test Fold exploration number 1
+2026-07-08 15:28:26.081638: I Exploration: Train-Validation Fold exploration number 1
+2026-07-08 15:28:54.992441: I 
+2026-07-08 15:28:54.998900: I Test Evaluation results
+2026-07-08 15:28:55.004452: I Cut-off: 10
+2026-07-08 15:28:55.004539: I Eval Time: 0.6989550590515137
+2026-07-08 15:28:55.004617: I Results
+2026-07-08 15:28:55.004689: I nDCG	0.11397
+2026-07-08 15:28:55.004787: I Precision	0.10901
+2026-07-08 15:28:55.004901: I Recall	0.0746
+2026-07-08 15:28:55.005005: I HR	0.54603
+2026-07-08 15:28:55.005114: I MAP	0.13114
+2026-07-08 15:29:17.445726: I 
+2026-07-08 15:29:17.446146: I Test Evaluation results
+2026-07-08 15:29:17.453176: I Cut-off: 10
+2026-07-08 15:29:17.453288: I Eval Time: 0.6438202857971191
+2026-07-08 15:29:17.458768: I Results
+2026-07-08 15:29:17.458887: I nDCG	0.1323
+2026-07-08 15:29:17.458962: I Precision	0.12425
+2026-07-08 15:29:17.459034: I Recall	0.08785
+2026-07-08 15:29:17.459106: I HR	0.59934
+2026-07-08 15:29:17.459208: I MAP	0.15159
+2026-07-08 15:29:40.103455: I 
+2026-07-08 15:29:40.103895: I Test Evaluation results
+2026-07-08 15:29:40.111785: I Cut-off: 10
+2026-07-08 15:29:40.111899: I Eval Time: 0.6533787250518799
+2026-07-08 15:29:40.111978: I Results
+2026-07-08 15:29:40.112051: I nDCG	0.16838
+2026-07-08 15:29:40.112135: I Precision	0.15301
+2026-07-08 15:29:40.112245: I Recall	0.11368
+2026-07-08 15:29:40.112412: I HR	0.67053
+2026-07-08 15:29:40.112535: I MAP	0.19159
+2026-07-08 15:30:02.319305: I 
+2026-07-08 15:30:02.327077: I Test Evaluation results
+2026-07-08 15:30:02.327201: I Cut-off: 10
+2026-07-08 15:30:02.327281: I Eval Time: 0.6359474658966064
+2026-07-08 15:30:02.327383: I Results
+2026-07-08 15:30:02.327465: I nDCG	0.18423
+2026-07-08 15:30:02.332950: I Precision	0.16722
+2026-07-08 15:30:02.333030: I Recall	0.12611
+2026-07-08 15:30:02.333100: I HR	0.70033
+2026-07-08 15:30:02.333169: I MAP	0.21055
+2026-07-08 15:30:24.920015: I 
+2026-07-08 15:30:24.928706: I Test Evaluation results
+2026-07-08 15:30:24.928915: I Cut-off: 10
+2026-07-08 15:30:24.929000: I Eval Time: 0.6376690864562988
+2026-07-08 15:30:24.929075: I Results
+2026-07-08 15:30:24.929149: I nDCG	0.19435
+2026-07-08 15:30:24.929231: I Precision	0.17834
+2026-07-08 15:30:24.934796: I Recall	0.13572
+2026-07-08 15:30:24.939984: I HR	0.72401
+2026-07-08 15:30:24.940077: I MAP	0.22261
+2026-07-08 15:30:47.776858: I 
+2026-07-08 15:30:47.788588: I Test Evaluation results
+2026-07-08 15:30:47.788702: I Cut-off: 10
+2026-07-08 15:30:47.788775: I Eval Time: 0.6690018177032471
+2026-07-08 15:30:47.788864: I Results
+2026-07-08 15:30:47.788951: I nDCG	0.20334
+2026-07-08 15:30:47.789071: I Precision	0.18772
+2026-07-08 15:30:47.789144: I Recall	0.14398
+2026-07-08 15:30:47.789218: I HR	0.74603
+2026-07-08 15:30:47.789324: I MAP	0.23357
+2026-07-08 15:31:10.262545: I 
+2026-07-08 15:31:10.271448: I Test Evaluation results
+2026-07-08 15:31:10.271560: I Cut-off: 10
+2026-07-08 15:31:10.271655: I Eval Time: 0.6635334491729736
+2026-07-08 15:31:10.271725: I Results
+2026-07-08 15:31:10.271828: I nDCG	0.21019
+2026-07-08 15:31:10.271951: I Precision	0.1946
+2026-07-08 15:31:10.272073: I Recall	0.15012
+2026-07-08 15:31:10.272193: I HR	0.7553
+2026-07-08 15:31:10.272297: I MAP	0.24142
+2026-07-08 15:31:32.752436: I 
+2026-07-08 15:31:32.752872: I Test Evaluation results
+2026-07-08 15:31:32.752958: I Cut-off: 10
+2026-07-08 15:31:32.753031: I Eval Time: 0.6661109924316406
+2026-07-08 15:31:32.753101: I Results
+2026-07-08 15:31:32.764416: I nDCG	0.21722
+2026-07-08 15:31:32.764497: I Precision	0.20098
+2026-07-08 15:31:32.764568: I Recall	0.15554
+2026-07-08 15:31:32.764638: I HR	0.76705
+2026-07-08 15:31:32.764707: I MAP	0.24922
+2026-07-08 15:31:55.886994: I 
+2026-07-08 15:31:55.898914: I Test Evaluation results
+2026-07-08 15:31:55.899022: I Cut-off: 10
+2026-07-08 15:31:55.899102: I Eval Time: 0.6605608463287354
+2026-07-08 15:31:55.899175: I Results
+2026-07-08 15:31:55.899243: I nDCG	0.2217
+2026-07-08 15:31:55.899315: I Precision	0.20551
+2026-07-08 15:31:55.904889: I Recall	0.15959
+2026-07-08 15:31:55.904998: I HR	0.77666
+2026-07-08 15:31:55.905067: I MAP	0.25435
+2026-07-08 15:32:18.035421: I 
+2026-07-08 15:32:18.044645: I Test Evaluation results
+2026-07-08 15:32:18.044751: I Cut-off: 10
+2026-07-08 15:32:18.044827: I Eval Time: 0.6463472843170166
+2026-07-08 15:32:18.044922: I Results
+2026-07-08 15:32:18.044997: I nDCG	0.22693
+2026-07-08 15:32:18.045071: I Precision	0.21066
+2026-07-08 15:32:18.045133: I Recall	0.16472
+2026-07-08 15:32:18.045197: I HR	0.7851
+2026-07-08 15:32:18.045272: I MAP	0.25937
+2026-07-08 15:32:18.053709: I Training ended for LightGCN
+2026-07-08 15:32:18.053794: I Loss:	-0.22693168252643925
+2026-07-08 15:32:18.053884: I Best Model params:	{'lr': 0.001, 'epochs': 10, 'factors': 256, 'batch_size': 8192, 'l_w': 0.001, 'n_layers': 2, 'meta': namespace(), 'name': 'LightGCN_seed=42_e=10_bs=8192_lr=0$001_factors=256_l_w=0$001_n_layers=2', 'best_iteration': 10}
+2026-07-08 15:32:18.053959: I Best Model results:	{10: {'nDCG': 0.22693168252643925, 'Precision': 0.21066225165562916, 'Recall': 0.16471553088322008, 'HR': 0.7850993377483444, 'MAP': 0.2593732523914643}}
+2026-07-08 15:32:18.114788: I End experiment
+2026-07-09 09:08:52.114907: I Start experiment
+2026-07-09 09:08:52.658217: I There will be the splitting
+2026-07-09 09:08:52.933060: I C:\Users\shefai\Desktop\third_party recsys audit\third-party-recsys-audit_\elliot\data\movielens_1m\dataset.tsv - Loaded
+2026-07-09 09:09:17.623106: I Test Fold 0
+2026-07-09 09:09:33.407687: I Statistics	Users:	6040	Items:	3693	Transactions:	897450	Sparsity:	0.9597659255114832
+2026-07-09 09:10:07.080301: I Training begun for LightGCN
+
+2026-07-09 09:10:07.175295: I Hyperparameters:
+2026-07-09 09:10:07.175295: I lr set to 0.001
+2026-07-09 09:10:07.175295: I epochs set to 10
+2026-07-09 09:10:07.175295: I factors set to 256
+2026-07-09 09:10:07.175295: I batch_size set to 8192
+2026-07-09 09:10:07.175295: I l_w set to 0.001
+2026-07-09 09:10:07.175295: I n_layers set to 2
+2026-07-09 09:10:07.175295: I meta set to namespace()
+2026-07-09 09:10:07.191361: I Exploration: Test Fold exploration number 1
+2026-07-09 09:10:07.191361: I Exploration: Train-Validation Fold exploration number 1
+2026-07-09 09:11:00.271108: I 
+2026-07-09 09:11:00.271108: I Test Evaluation results
+2026-07-09 09:11:00.271108: I Cut-off: 10
+2026-07-09 09:11:00.287666: I Eval Time: 0.4818909168243408
+2026-07-09 09:11:00.318829: I Results
+2026-07-09 09:11:00.350315: I nDCG	0.11397
+2026-07-09 09:11:00.366227: I Precision	0.10901
+2026-07-09 09:11:00.398124: I Recall	0.0746
+2026-07-09 09:11:00.429972: I HR	0.54603
+2026-07-09 09:11:00.461448: I MAP	0.13114
+2026-07-09 09:11:53.146565: I Start experiment
+2026-07-09 09:11:53.606296: I There will be the splitting
+2026-07-09 09:11:54.005891: I C:\Users\shefai\Desktop\third_party recsys audit\third-party-recsys-audit_\elliot\data\movielens_1m\dataset.tsv - Loaded
+2026-07-09 09:11:56.087147: I Test Fold 0
+2026-07-09 09:12:25.041979: I Statistics	Users:	6040	Items:	3693	Transactions:	897450	Sparsity:	0.9597659255114832
+2026-07-09 09:14:29.596669: I Start experiment
+2026-07-09 09:14:29.943078: I C:\Users\shefai\Desktop\third_party recsys audit\third-party-recsys-audit_\elliot\data\lightgcn\training\gowalla\train.tsv - Loaded
+2026-07-09 09:14:30.220827: I Test Fold 0
+2026-07-09 09:14:44.172666: I Start experiment
+2026-07-09 09:14:44.572804: I C:\Users\shefai\Desktop\third_party recsys audit\third-party-recsys-audit_\elliot\data\lightgcn\training\gowalla\train.tsv - Loaded
+2026-07-09 09:14:44.865432: I Test Fold 0
+2026-07-09 09:16:06.765957: I Start experiment
+2026-07-09 09:16:07.019614: I C:\Users\shefai\Desktop\third_party recsys audit\third-party-recsys-audit_\elliot\data\lightgcn\training\gowalla\train.tsv - Loaded
+2026-07-09 09:16:07.226848: I Test Fold 0
+2026-07-09 09:16:15.733098: I Statistics	Users:	29860	Items:	72677	Transactions:	810129	Sparsity:	0.9996266919256764
+2026-07-09 09:16:25.592320: I Training begun for LightGCN
+
+2026-07-09 09:16:25.622844: I Hyperparameters:
+2026-07-09 09:16:25.622844: I meta set to namespace(save_recs=True)
+2026-07-09 09:16:25.622844: I lr set to 0.001
+2026-07-09 09:16:25.622844: I epochs set to 1
+2026-07-09 09:16:25.622844: I batch_size set to 2048
+2026-07-09 09:16:25.622844: I factors set to 64
+2026-07-09 09:16:25.622844: I l_w set to 0.0001
+2026-07-09 09:16:25.622844: I n_layers set to 1
+2026-07-09 09:16:25.622844: I n_fold set to 1
+2026-07-09 09:16:25.622844: I Exploration: Test Fold exploration number 1
+2026-07-09 09:16:25.622844: I Exploration: Train-Validation Fold exploration number 1
+2026-07-09 09:17:47.422369: I 
+2026-07-09 09:17:47.454247: I Test Evaluation results
+2026-07-09 09:17:47.486109: I Cut-off: 10
+2026-07-09 09:17:47.517954: I Eval Time: 0.3516550064086914
+2026-07-09 09:17:47.549918: I Results
+2026-07-09 09:17:47.565879: I nDCG	0.07869
+2026-07-09 09:17:47.597744: I Recall	0.07539
+2026-07-09 09:17:47.790174: I 
+2026-07-09 09:17:47.790174: I Test Evaluation results
+2026-07-09 09:17:47.806760: I Cut-off: 20
+2026-07-09 09:17:47.806760: I Eval Time: 0.39963340759277344
+2026-07-09 09:17:47.806760: I Results
+2026-07-09 09:17:47.806760: I nDCG	0.08799
+2026-07-09 09:17:47.822183: I Recall	0.10588
+2026-07-09 09:17:50.265096: I Training ended for LightGCN
+2026-07-09 09:17:50.265096: I Loss:	-0.07868772848819901
+2026-07-09 09:17:50.265096: I Best Model params:	{'meta': namespace(save_recs=True), 'lr': 0.001, 'epochs': 1, 'batch_size': 2048, 'factors': 64, 'l_w': 0.0001, 'n_layers': 1, 'n_fold': 1, 'name': 'LightGCN_seed=42_e=1_bs=2048_lr=0$001_factors=64_l_w=0$0001_n_layers=1', 'best_iteration': 1}
+2026-07-09 09:17:50.265096: I Best Model results:	{10: {'nDCG': 0.07868772848819901, 'Recall': 0.07539264082634936}, 20: {'nDCG': 0.08799342276911908, 'Recall': 0.10587576115031064}}
+2026-07-09 09:17:50.281074: I End experiment
+2026-07-09 09:44:28.688478: I Start experiment
+2026-07-09 09:44:29.848116: I C:\Users\shefai\Desktop\third_party recsys audit\third-party-recsys-audit_\elliot\data\lightgcn\training\gowalla\train.tsv - Loaded
+2026-07-09 09:44:30.523269: I Test Fold 0
+2026-07-09 09:45:00.239102: I Statistics	Users:	29860	Items:	72677	Transactions:	810129	Sparsity:	0.9996266919256764
+2026-07-09 09:45:46.078667: I Training begun for LightGCN
+
+2026-07-09 09:45:46.100734: I Hyperparameters:
+2026-07-09 09:45:46.116681: I meta set to namespace(save_recs=True)
+2026-07-09 09:45:46.148863: I lr set to 0.001
+2026-07-09 09:45:46.181668: I epochs set to 1
+2026-07-09 09:45:46.215956: I batch_size set to 2048
+2026-07-09 09:45:46.232162: I factors set to 64
+2026-07-09 09:45:46.232162: I l_w set to 0.0001
+2026-07-09 09:45:46.232162: I n_layers set to 1
+2026-07-09 09:45:46.232162: I n_fold set to 1
+2026-07-09 09:45:46.232162: I Exploration: Test Fold exploration number 1
+2026-07-09 09:45:46.232162: I Exploration: Train-Validation Fold exploration number 1
+2026-07-09 09:50:30.140761: I 
+2026-07-09 09:50:30.156553: I Test Evaluation results
+2026-07-09 09:50:30.172667: I Cut-off: 10
+2026-07-09 09:50:30.180365: I Eval Time: 0.31716251373291016
+2026-07-09 09:50:30.196228: I Results
+2026-07-09 09:50:30.212420: I nDCG	6e-05
+2026-07-09 09:50:30.228712: I Recall	9e-05
+2026-07-09 09:50:30.551927: I 
+2026-07-09 09:50:30.551927: I Test Evaluation results
+2026-07-09 09:50:30.552933: I Cut-off: 20
+2026-07-09 09:50:30.552933: I Eval Time: 0.42061352729797363
+2026-07-09 09:50:30.552933: I Results
+2026-07-09 09:50:30.553938: I nDCG	0.00038
+2026-07-09 09:50:30.555240: I Recall	0.00084
+2026-07-09 09:50:32.719406: I Training ended for LightGCN
+2026-07-09 09:50:32.719406: I Loss:	-5.5331216257379005e-05
+2026-07-09 09:50:32.721414: I Best Model params:	{'meta': namespace(save_recs=True), 'lr': 0.001, 'epochs': 1, 'batch_size': 2048, 'factors': 64, 'l_w': 0.0001, 'n_layers': 1, 'n_fold': 1, 'name': 'LightGCN_seed=42_e=1_bs=2048_lr=0$001_factors=64_n_layers=1_l_w=0$0001_n_fold=1', 'best_iteration': 1}
+2026-07-09 09:50:32.721414: I Best Model results:	{10: {'nDCG': 5.5331216257379005e-05, 'Recall': 9.343477680529336e-05}, 20: {'nDCG': 0.00038307498581013807, 'Recall': 0.0008436310322521526}}
+2026-07-09 09:50:32.733054: I End experiment
+2026-07-09 10:56:57.610478: I Start experiment
+2026-07-09 10:57:01.910221: I There will be the splitting
+2026-07-09 10:57:02.112581: I C:\Users\shefai\Desktop\third_party recsys audit\third-party-recsys-audit_\elliot\data\movielens_1m\dataset.tsv - Loaded
+2026-07-09 10:57:04.981285: I Test Fold 0
+2026-07-09 10:57:52.752430: I Statistics	Users:	6040	Items:	3693	Transactions:	897450	Sparsity:	0.9597659255114832
+2026-07-09 11:00:55.756240: I Start experiment
+2026-07-09 11:00:55.792560: I There will be the splitting
+2026-07-09 11:00:55.985073: I C:\Users\shefai\Desktop\third_party recsys audit\third-party-recsys-audit_\elliot\data\movielens_1m\dataset.tsv - Loaded
+2026-07-09 11:00:56.906765: I Test Fold 0
+2026-07-09 11:01:06.880236: I Statistics	Users:	6040	Items:	3693	Transactions:	897450	Sparsity:	0.9597659255114832
+2026-07-09 11:01:50.935494: I Start experiment
+2026-07-09 11:01:50.968318: I There will be the splitting
+2026-07-09 11:01:51.144044: I C:\Users\shefai\Desktop\third_party recsys audit\third-party-recsys-audit_\elliot\data\movielens_1m\dataset.tsv - Loaded
+2026-07-09 11:01:52.099390: I Test Fold 0
+2026-07-09 11:02:00.929423: I Start experiment
+2026-07-09 11:02:00.972538: I There will be the splitting
+2026-07-09 11:02:01.161753: I C:\Users\shefai\Desktop\third_party recsys audit\third-party-recsys-audit_\elliot\data\movielens_1m\dataset.tsv - Loaded
+2026-07-09 11:02:02.191647: I Test Fold 0
+2026-07-09 11:02:18.930360: I Start experiment
+2026-07-09 11:02:18.948133: I There will be the splitting
+2026-07-09 11:02:19.219535: I C:\Users\shefai\Desktop\third_party recsys audit\third-party-recsys-audit_\elliot\data\movielens_1m\dataset.tsv - Loaded
+2026-07-09 11:02:52.334976: I Test Fold 0
+2026-07-09 11:03:26.581802: I Statistics	Users:	6040	Items:	3693	Transactions:	897450	Sparsity:	0.9597659255114832
+2026-07-09 11:03:53.690965: I Training begun for LightGCN
+
+2026-07-09 11:03:53.706737: I Hyperparameters:
+2026-07-09 11:03:53.722774: I meta set to namespace(save_recs=True)
+2026-07-09 11:03:53.738752: I lr set to 0.001
+2026-07-09 11:03:53.739502: I epochs set to 1
+2026-07-09 11:03:53.739502: I factors set to 256
+2026-07-09 11:03:53.739502: I batch_size set to 8192
+2026-07-09 11:03:53.742006: I l_w set to 0.001
+2026-07-09 11:03:53.742006: I n_layers set to 2
+2026-07-09 11:03:53.742006: I Exploration: Test Fold exploration number 1
+2026-07-09 11:03:53.742006: I Exploration: Train-Validation Fold exploration number 1
+2026-07-09 11:05:16.885867: I 
+2026-07-09 11:05:16.885867: I Test Evaluation results
+2026-07-09 11:05:16.885867: I Cut-off: 10
+2026-07-09 11:05:16.885867: I Eval Time: 0.23532390594482422
+2026-07-09 11:05:16.885867: I Results
+2026-07-09 11:05:16.885867: I nDCG	0.11397
+2026-07-09 11:05:16.901604: I Recall	0.0746
+2026-07-09 11:05:16.901604: I HR	0.54603
+2026-07-09 11:05:17.102818: I Training ended for LightGCN
+2026-07-09 11:05:17.102818: I Loss:	-0.11396586538981456
+2026-07-09 11:05:17.102818: I Best Model params:	{'meta': namespace(save_recs=True), 'lr': 0.001, 'epochs': 1, 'factors': 256, 'batch_size': 8192, 'l_w': 0.001, 'n_layers': 2, 'name': 'LightGCN_seed=42_e=1_bs=8192_lr=0$001_factors=256_l_w=0$001_n_layers=2', 'best_iteration': 1}
+2026-07-09 11:05:17.102818: I Best Model results:	{10: {'nDCG': 0.11396586538981456, 'Recall': 0.07459676121382669, 'HR': 0.5460264900662252}}
+2026-07-09 11:05:17.118456: I End experiment
+2026-07-09 11:09:28.518492: I Start experiment
+2026-07-09 11:09:32.853568: I There will be the splitting
+2026-07-09 11:09:33.052060: I C:\Users\shefai\Desktop\third_party recsys audit\third-party-recsys-audit_\elliot\data\movielens_1m\dataset.tsv - Loaded
+2026-07-09 11:09:35.986470: I Test Fold 0
+2026-07-09 11:10:21.951730: I Statistics	Users:	6040	Items:	3693	Transactions:	897450	Sparsity:	0.9597659255114832
+2026-07-09 11:12:11.129383: I Start experiment
+2026-07-09 11:12:11.193014: I There will be the splitting
+2026-07-09 11:12:11.384862: I C:\Users\shefai\Desktop\third_party recsys audit\third-party-recsys-audit_\elliot\data\movielens_1m\dataset.tsv - Loaded
+2026-07-09 11:12:14.442700: I Test Fold 0
+2026-07-09 11:12:56.974845: I Statistics	Users:	6040	Items:	3693	Transactions:	897450	Sparsity:	0.9597659255114832
+2026-07-09 11:14:38.967155: I Start experiment
+2026-07-09 11:14:39.015100: I There will be the splitting
+2026-07-09 11:14:39.246461: I C:\Users\shefai\Desktop\third_party recsys audit\third-party-recsys-audit_\elliot\data\movielens_1m\dataset.tsv - Loaded
+2026-07-09 11:14:42.320653: I Test Fold 0
+2026-07-09 11:15:24.832248: I Statistics	Users:	6040	Items:	3693	Transactions:	897450	Sparsity:	0.9597659255114832
+2026-07-09 11:16:04.101778: I Training begun for LightGCN
+
+2026-07-09 11:16:04.136828: I Hyperparameters:
+2026-07-09 11:16:04.148359: I meta set to namespace(save_recs=True)
+2026-07-09 11:16:04.157513: I lr set to 0.001
+2026-07-09 11:16:04.157513: I epochs set to 1
+2026-07-09 11:16:04.158513: I factors set to 256
+2026-07-09 11:16:04.158513: I batch_size set to 8192
+2026-07-09 11:16:04.159513: I l_w set to 0.001
+2026-07-09 11:16:04.159513: I n_layers set to 2
+2026-07-09 11:16:04.160516: I Exploration: Test Fold exploration number 1
+2026-07-09 11:16:04.160516: I Exploration: Train-Validation Fold exploration number 1
+2026-07-09 11:16:37.370171: I 
+2026-07-09 11:16:37.370171: I Test Evaluation results
+2026-07-09 11:16:37.370171: I Cut-off: 10
+2026-07-09 11:16:37.370171: I Eval Time: 0.45554113388061523
+2026-07-09 11:16:37.370171: I Results
+2026-07-09 11:16:37.370171: I nDCG	0.01157
+2026-07-09 11:16:37.370171: I Recall	0.00702
+2026-07-09 11:16:37.370171: I HR	0.10629
+2026-07-09 11:19:37.752539: I Start experiment
+2026-07-09 11:19:37.834449: I There will be the splitting
+2026-07-09 11:19:38.015715: I C:\Users\shefai\Desktop\third_party recsys audit\third-party-recsys-audit_\elliot\data\movielens_1m\dataset.tsv - Loaded
+2026-07-09 11:19:40.880933: I Test Fold 0
+2026-07-09 11:20:24.078930: I Statistics	Users:	6040	Items:	3693	Transactions:	897450	Sparsity:	0.9597659255114832
+2026-07-09 11:20:32.562862: I Training begun for LightGCN
+
+2026-07-09 11:20:32.589088: I Hyperparameters:
+2026-07-09 11:20:32.589088: I meta set to namespace(save_recs=True)
+2026-07-09 11:20:32.589088: I lr set to 0.001
+2026-07-09 11:20:32.589088: I epochs set to 1
+2026-07-09 11:20:32.589088: I factors set to 256
+2026-07-09 11:20:32.589088: I batch_size set to 8192
+2026-07-09 11:20:32.589088: I l_w set to 0.001
+2026-07-09 11:20:32.589088: I n_layers set to 2
+2026-07-09 11:20:32.589088: I Exploration: Test Fold exploration number 1
+2026-07-09 11:20:32.589088: I Exploration: Train-Validation Fold exploration number 1
+2026-07-09 11:21:11.996231: I 
+2026-07-09 11:21:11.996231: I Test Evaluation results
+2026-07-09 11:21:11.996231: I Cut-off: 10
+2026-07-09 11:21:11.996231: I Eval Time: 0.47934961318969727
+2026-07-09 11:21:11.996231: I Results
+2026-07-09 11:21:11.996231: I nDCG	0.01157
+2026-07-09 11:21:11.996231: I Recall	0.00702
+2026-07-09 11:21:11.996231: I HR	0.10629
+2026-07-09 11:28:04.570813: I Start experiment
+2026-07-09 11:28:04.609741: I There will be the splitting
+2026-07-09 11:28:04.822146: I C:\Users\shefai\Desktop\third_party recsys audit\third-party-recsys-audit_\elliot\data\movielens_1m\dataset.tsv - Loaded
+2026-07-09 11:28:05.863513: I Test Fold 0
+2026-07-09 11:28:14.565450: I Start experiment
+2026-07-09 11:28:14.598717: I There will be the splitting
+2026-07-09 11:28:14.781512: I C:\Users\shefai\Desktop\third_party recsys audit\third-party-recsys-audit_\elliot\data\movielens_1m\dataset.tsv - Loaded
+2026-07-09 11:28:15.778922: I Test Fold 0
+2026-07-09 11:40:00.742824: I Start experiment
+2026-07-09 11:40:00.778125: I There will be the splitting
+2026-07-09 11:40:01.076702: I C:\Users\shefai\Desktop\third_party recsys audit\third-party-recsys-audit_\elliot\data\movielens_1m\dataset.tsv - Loaded
+2026-07-09 11:41:03.912369: I Start experiment
+2026-07-09 11:41:03.951773: I There will be the splitting
+2026-07-09 11:41:04.243726: I C:\Users\shefai\Desktop\third_party recsys audit\third-party-recsys-audit_\elliot\data\movielens_1m\dataset.tsv - Loaded
+2026-07-09 11:41:17.394374: I Start experiment
+2026-07-09 11:41:17.434262: I There will be the splitting
+2026-07-09 11:41:17.702798: I C:\Users\shefai\Desktop\third_party recsys audit\third-party-recsys-audit_\elliot\data\movielens_1m\dataset.tsv - Loaded
+2026-07-09 11:41:26.211582: I Start experiment
+2026-07-09 11:41:26.244083: I There will be the splitting
+2026-07-09 11:41:26.512811: I C:\Users\shefai\Desktop\third_party recsys audit\third-party-recsys-audit_\elliot\data\movielens_1m\dataset.tsv - Loaded
+2026-07-09 11:41:36.544436: I Start experiment
+2026-07-09 11:41:36.594363: I There will be the splitting
+2026-07-09 11:41:36.878040: I C:\Users\shefai\Desktop\third_party recsys audit\third-party-recsys-audit_\elliot\data\movielens_1m\dataset.tsv - Loaded
+2026-07-09 11:42:17.798756: I Start experiment
+2026-07-09 11:42:17.836836: I There will be the splitting
+2026-07-09 11:42:18.098652: I C:\Users\shefai\Desktop\third_party recsys audit\third-party-recsys-audit_\elliot\data\movielens_1m\dataset.tsv - Loaded
+2026-07-09 11:43:47.480097: I Start experiment
+2026-07-09 11:43:47.513370: I There will be the splitting
+2026-07-09 11:43:47.784947: I C:\Users\shefai\Desktop\third_party recsys audit\third-party-recsys-audit_\elliot\data\movielens_1m\dataset.tsv - Loaded
+2026-07-09 11:44:39.517946: I Start experiment
+2026-07-09 11:44:39.561124: I There will be the splitting
+2026-07-09 11:44:39.835812: I C:\Users\shefai\Desktop\third_party recsys audit\third-party-recsys-audit_\elliot\data\movielens_1m\dataset.tsv - Loaded
+2026-07-09 11:44:50.541612: I Start experiment
+2026-07-09 11:44:50.574861: I There will be the splitting
+2026-07-09 11:44:50.839563: I C:\Users\shefai\Desktop\third_party recsys audit\third-party-recsys-audit_\elliot\data\movielens_1m\dataset.tsv - Loaded
+2026-07-09 11:47:01.600436: I Start experiment
+2026-07-09 11:47:01.635990: I There will be the splitting
+2026-07-09 11:47:01.896689: I C:\Users\shefai\Desktop\third_party recsys audit\third-party-recsys-audit_\elliot\data\movielens_1m\dataset.tsv - Loaded
+2026-07-09 11:47:11.472235: I Start experiment
+2026-07-09 11:47:11.510214: I There will be the splitting
+2026-07-09 11:47:11.788200: I C:\Users\shefai\Desktop\third_party recsys audit\third-party-recsys-audit_\elliot\data\movielens_1m\dataset.tsv - Loaded
+2026-07-09 11:47:22.025332: I Start experiment
+2026-07-09 11:47:22.059528: I There will be the splitting
+2026-07-09 11:47:22.335898: I C:\Users\shefai\Desktop\third_party recsys audit\third-party-recsys-audit_\elliot\data\movielens_1m\dataset.tsv - Loaded
+2026-07-09 11:52:58.085184: I Start experiment
+2026-07-09 11:52:58.092705: I There will be the splitting
+2026-07-09 11:52:58.347181: I C:\Users\shefai\Desktop\third_party recsys audit\third-party-recsys-audit_\elliot\data\movielens_1m\dataset.tsv - Loaded
+2026-07-09 11:53:27.149620: I Test Fold 0
+2026-07-09 11:53:48.070510: I Statistics	Users:	6040	Items:	3693	Transactions:	897450	Sparsity:	0.9597659255114832
+2026-07-09 11:53:58.470820: I Training begun for LightGCN
+
+2026-07-09 11:53:58.472958: I Hyperparameters:
+2026-07-09 11:53:58.474385: I meta set to namespace(save_recs=True)
+2026-07-09 11:53:58.476599: I lr set to 0.001
+2026-07-09 11:53:58.481594: I epochs set to 1
+2026-07-09 11:53:58.483118: I factors set to 256
+2026-07-09 11:53:58.485514: I batch_size set to 8192
+2026-07-09 11:53:58.486889: I l_w set to 0.001
+2026-07-09 11:53:58.488908: I n_layers set to 2
+2026-07-09 11:53:58.489910: I Exploration: Test Fold exploration number 1
+2026-07-09 11:53:58.492187: I Exploration: Train-Validation Fold exploration number 1
+2026-07-09 11:57:44.582545: I Start experiment
+2026-07-09 11:57:44.595675: I There will be the splitting
+2026-07-09 11:57:44.861599: I C:\Users\shefai\Desktop\third_party recsys audit\third-party-recsys-audit_\elliot\data\movielens_1m\dataset.tsv - Loaded
+2026-07-09 11:58:10.588524: I Test Fold 0
+2026-07-09 11:59:37.147923: I Statistics	Users:	6040	Items:	3693	Transactions:	897450	Sparsity:	0.9597659255114832
+2026-07-09 11:59:49.363307: I Training begun for LightGCN
+
+2026-07-09 11:59:49.365306: I Hyperparameters:
+2026-07-09 11:59:49.366306: I meta set to namespace(save_recs=True)
+2026-07-09 11:59:49.367306: I lr set to 0.001
+2026-07-09 11:59:49.368307: I epochs set to 1
+2026-07-09 11:59:49.368307: I factors set to 256
+2026-07-09 11:59:49.369306: I batch_size set to 8192
+2026-07-09 11:59:49.370306: I l_w set to 0.001
+2026-07-09 11:59:49.370306: I n_layers set to 2
+2026-07-09 11:59:49.371306: I Exploration: Test Fold exploration number 1
+2026-07-09 11:59:49.371306: I Exploration: Train-Validation Fold exploration number 1
+2026-07-09 14:10:30.144518: I Start experiment
+2026-07-09 14:10:30.455328: I C:\Users\shefai\Desktop\third_party recsys audit\third-party-recsys-audit_\elliot\data\lightgcn\training\gowalla\train.tsv - Loaded
+2026-07-09 14:10:30.741428: I Test Fold 0
+2026-07-09 14:11:28.570836: I Start experiment
+2026-07-09 14:11:42.606672: I Start experiment
+2026-07-09 14:12:25.519919: I Statistics	Users:	29860	Items:	72677	Transactions:	810129	Sparsity:	0.9996266919256764
+2026-07-09 14:14:29.417230: I Start experiment
+2026-07-09 14:15:02.809378: I Start experiment
+2026-07-09 14:17:02.015703: I Start experiment
+2026-07-09 14:17:02.279846: I C:\Users\shefai\Desktop\third_party recsys audit\third-party-recsys-audit_\elliot\data\lightgcn\training\gowalla\train.tsv - Loaded
+2026-07-09 14:17:02.504290: I Test Fold 0
+2026-07-09 14:19:55.912816: I Statistics	Users:	29860	Items:	72677	Transactions:	810129	Sparsity:	0.9996266919256764
+2026-07-09 14:20:26.344342: I Training begun for LightGCN
+
+2026-07-09 14:20:26.634219: I Hyperparameters:
+2026-07-09 14:20:26.635465: I meta set to namespace(save_recs=True)
+2026-07-09 14:20:26.637432: I lr set to 0.001
+2026-07-09 14:20:26.639462: I epochs set to 1
+2026-07-09 14:20:26.641433: I batch_size set to 2048
+2026-07-09 14:20:26.642432: I factors set to 64
+2026-07-09 14:20:26.644944: I l_w set to 0.0001
+2026-07-09 14:20:26.648099: I n_layers set to 1
+2026-07-09 14:20:26.650584: I n_fold set to 1
+2026-07-09 14:20:26.652585: I Exploration: Test Fold exploration number 1
+2026-07-09 14:20:26.657137: I Exploration: Train-Validation Fold exploration number 1
+2026-07-09 14:23:52.136332: I 
+2026-07-09 14:23:52.216664: I Test Evaluation results
+2026-07-09 14:23:52.261890: I Cut-off: 10
+2026-07-09 14:23:52.317565: I Eval Time: 1.8655211925506592
+2026-07-09 14:23:52.357444: I Results
+2026-07-09 14:23:52.382844: I nDCG	0.07805
+2026-07-09 14:23:52.453806: I Recall	0.07531
+2026-07-09 14:23:54.545594: I 
+2026-07-09 14:23:54.548645: I Test Evaluation results
+2026-07-09 14:23:54.550191: I Cut-off: 20
+2026-07-09 14:23:54.550191: I Eval Time: 2.516606330871582
+2026-07-09 14:23:54.551200: I Results
+2026-07-09 14:23:54.552201: I nDCG	0.0873
+2026-07-09 14:23:54.553200: I Recall	0.10527
+2026-07-09 14:25:47.871371: I Start experiment
+2026-07-09 14:44:11.327180: I Start experiment
+2026-07-09 14:45:36.615844: I Start experiment
+2026-07-09 14:45:36.805689: I C:\Users\shefai\Desktop\third_party recsys audit\third-party-recsys-audit_\elliot\data\lightgcn\training\gowalla\train.tsv - Loaded
+2026-07-09 14:45:36.889399: I Test Fold 0
+2026-07-09 14:45:47.994163: I Statistics	Users:	29858	Items:	40981	Transactions:	810128	Sparsity:	0.9993379201396946
+2026-07-09 14:45:57.717167: I Training begun for LightGCN
+
+2026-07-09 14:45:57.742558: I Hyperparameters:
+2026-07-09 14:45:57.745393: I meta set to namespace(save_recs=True)
+2026-07-09 14:45:57.746447: I lr set to 0.001
+2026-07-09 14:45:57.746447: I epochs set to 1
+2026-07-09 14:45:57.747400: I batch_size set to 2048
+2026-07-09 14:45:57.748393: I factors set to 64
+2026-07-09 14:45:57.749396: I l_w set to 0.0001
+2026-07-09 14:45:57.750394: I n_layers set to 1
+2026-07-09 14:45:57.751394: I n_fold set to 1
+2026-07-09 14:45:57.751394: I Exploration: Test Fold exploration number 1
+2026-07-09 14:45:57.752394: I Exploration: Train-Validation Fold exploration number 1
+2026-07-09 14:47:17.330900: I 
+2026-07-09 14:47:17.466871: I Test Evaluation results
+2026-07-09 14:47:17.509843: I Cut-off: 10
+2026-07-09 14:47:17.635079: I Eval Time: 0.6530475616455078
+2026-07-09 14:47:17.709886: I Results
+2026-07-09 14:47:17.789732: I nDCG	0.08659
+2026-07-09 14:47:17.873753: I Recall	0.07891
+2026-07-09 14:47:18.110600: I 
+2026-07-09 14:47:18.111514: I Test Evaluation results
+2026-07-09 14:47:18.112515: I Cut-off: 20
+2026-07-09 14:47:18.119356: I Eval Time: 0.8816530704498291
+2026-07-09 14:47:18.120316: I Results
+2026-07-09 14:47:18.125832: I nDCG	0.09448
+2026-07-09 14:47:18.130864: I Recall	0.10942
+2026-07-09 14:47:20.137261: I Training ended for LightGCN
+2026-07-09 14:47:20.139325: I Loss:	-0.08659361276383992
+2026-07-09 14:47:20.141406: I Best Model params:	{'meta': namespace(save_recs=True), 'lr': 0.001, 'epochs': 1, 'batch_size': 2048, 'factors': 64, 'l_w': 0.0001, 'n_layers': 1, 'n_fold': 1, 'name': 'LightGCN_seed=42_e=1_bs=2048_lr=0$001_factors=64_l_w=0$0001_n_layers=1', 'best_iteration': 1}
+2026-07-09 14:47:20.142405: I Best Model results:	{10: {'nDCG': 0.08659361276383992, 'Recall': 0.07890522972049892}, 20: {'nDCG': 0.09448275049280301, 'Recall': 0.10942419396194189}}
+2026-07-09 14:47:20.149083: I End experiment
+2026-07-09 15:08:56.385601: I Start experiment
+2026-07-09 15:08:56.654866: I C:\Users\shefai\Desktop\third_party recsys audit\third-party-recsys-audit_\elliot\data\lightgcn\training\gowalla\train.tsv - Loaded
+2026-07-09 15:08:56.769202: I Test Fold 0
+2026-07-09 15:09:17.527214: I Statistics	Users:	29858	Items:	40981	Transactions:	810128	Sparsity:	0.9993379201396946
+2026-07-09 15:09:38.497638: I Start experiment
+2026-07-09 15:09:38.704614: I C:\Users\shefai\Desktop\third_party recsys audit\third-party-recsys-audit_\elliot\data\lightgcn\training\gowalla\train.tsv - Loaded
+2026-07-09 15:09:38.797927: I Test Fold 0
+2026-07-09 15:09:56.322893: I Statistics	Users:	29858	Items:	40981	Transactions:	810128	Sparsity:	0.9993379201396946
+2026-07-09 15:10:11.761408: I Training begun for LightGCN
+
+2026-07-09 15:10:11.761408: I Hyperparameters:
+2026-07-09 15:10:11.766295: I meta set to namespace(save_recs=True)
+2026-07-09 15:10:11.766295: I lr set to 0.001
+2026-07-09 15:10:11.766295: I epochs set to 1
+2026-07-09 15:10:11.771391: I batch_size set to 2048
+2026-07-09 15:10:11.771391: I factors set to 64
+2026-07-09 15:10:11.771391: I l_w set to 0.0001
+2026-07-09 15:10:11.774681: I n_fold set to 1
+2026-07-09 15:10:11.774681: I Exploration: Test Fold exploration number 1
+2026-07-09 15:10:11.774681: I Exploration: Train-Validation Fold exploration number 1
+2026-07-09 15:11:48.471200: I 
+2026-07-09 15:11:48.584257: I Test Evaluation results
+2026-07-09 15:11:48.649112: I Cut-off: 10
+2026-07-09 15:11:48.712836: I Eval Time: 1.5101673603057861
+2026-07-09 15:11:48.728992: I Results
+2026-07-09 15:11:48.921090: I nDCG	0.08659
+2026-07-09 15:11:49.032731: I Recall	0.07891
+2026-07-09 15:11:50.228958: I 
+2026-07-09 15:11:50.228958: I Test Evaluation results
+2026-07-09 15:11:50.231037: I Cut-off: 20
+2026-07-09 15:11:50.231037: I Eval Time: 1.9152920246124268
+2026-07-09 15:11:50.261310: I Results
+2026-07-09 15:11:50.324972: I nDCG	0.09448
+2026-07-09 15:11:50.366098: I Recall	0.10942
+2026-07-09 15:11:57.426086: I Training ended for LightGCN
+2026-07-09 15:11:57.431266: I Loss:	-0.08659361276383992
+2026-07-09 15:11:57.436094: I Best Model params:	{'meta': namespace(save_recs=True), 'lr': 0.001, 'epochs': 1, 'batch_size': 2048, 'factors': 64, 'l_w': 0.0001, 'n_fold': 1, 'name': 'LightGCN_seed=42_e=1_bs=2048_lr=0$001_factors=64_l_w=0$0001_n_layers=1', 'best_iteration': 1}
+2026-07-09 15:11:57.436094: I Best Model results:	{10: {'nDCG': 0.08659361276383992, 'Recall': 0.07890522972049892}, 20: {'nDCG': 0.09448275049280301, 'Recall': 0.10942419396194189}}
+2026-07-09 15:11:57.741436: I End experiment
+2026-07-09 16:08:56.503156: I Start experiment
+2026-07-09 16:10:25.061815: I Start experiment
+2026-07-09 16:10:25.246817: I C:\Users\shefai\Desktop\third_party recsys audit\third-party-recsys-audit_\elliot\data\lightgcn\training\gowalla\train.tsv - Loaded
+2026-07-09 16:10:25.334301: I Test Fold 0
+2026-07-09 16:11:38.861123: I Statistics	Users:	29858	Items:	40981	Transactions:	810128	Sparsity:	0.9993379201396946
+2026-07-09 16:26:25.675714: I Start experiment
+2026-07-09 16:26:25.866043: I C:\Users\shefai\Desktop\third_party recsys audit\third-party-recsys-audit_\elliot\data\lightgcn\training\gowalla\train.tsv - Loaded
+2026-07-09 16:26:25.942907: I Test Fold 0
+2026-07-09 16:28:13.892266: I Statistics	Users:	29858	Items:	40981	Transactions:	810128	Sparsity:	0.9993379201396946
+2026-07-09 16:40:44.353316: I Start experiment
+2026-07-09 16:40:44.553305: I C:\Users\shefai\Desktop\third_party recsys audit\third-party-recsys-audit_\elliot\data\lightgcn\training\gowalla\train.tsv - Loaded
+2026-07-09 16:40:44.658306: I Test Fold 0
+2026-07-09 16:41:47.922374: I Statistics	Users:	29858	Items:	40981	Transactions:	810128	Sparsity:	0.9993379201396946
+2026-07-09 16:42:50.391312: I Training begun for LightGCN
+
+2026-07-09 16:42:50.391312: I Hyperparameters:
+2026-07-09 16:42:50.391312: I meta set to namespace(save_recs=True)
+2026-07-09 16:42:50.391312: I lr set to 0.001
+2026-07-09 16:42:50.391312: I epochs set to 1
+2026-07-09 16:42:50.391312: I batch_size set to 2048
+2026-07-09 16:42:50.391312: I factors set to 64
+2026-07-09 16:42:50.391312: I l_w set to 0.0001
+2026-07-09 16:42:50.391312: I n_fold set to 1
+2026-07-09 16:42:50.404084: I Exploration: Test Fold exploration number 1
+2026-07-09 16:42:50.404084: I Exploration: Train-Validation Fold exploration number 1
+2026-07-09 16:45:18.649246: I 
+2026-07-09 16:45:18.681980: I Test Evaluation results
+2026-07-09 16:45:18.727552: I Cut-off: 10
+2026-07-09 16:45:18.774634: I Eval Time: 2.2688140869140625
+2026-07-09 16:45:18.853763: I Results
+2026-07-09 16:45:18.946750: I nDCG	0.08659
+2026-07-09 16:45:18.962771: I Recall	0.07891
+2026-07-09 16:45:21.737293: I 
+2026-07-09 16:45:21.738227: I Test Evaluation results
+2026-07-09 16:45:21.739227: I Cut-off: 20
+2026-07-09 16:45:21.740302: I Eval Time: 3.201784133911133
+2026-07-09 16:45:21.744291: I Results
+2026-07-09 16:45:21.754213: I nDCG	0.09448
+2026-07-09 16:45:21.771498: I Recall	0.10942
+2026-07-09 16:45:23.529126: I Training ended for LightGCN
+2026-07-09 16:47:40.312980: I Start experiment
+2026-07-09 16:47:40.500237: I C:\Users\shefai\Desktop\third_party recsys audit\third-party-recsys-audit_\elliot\data\lightgcn\training\gowalla\train.tsv - Loaded
+2026-07-09 16:47:40.582509: I Test Fold 0
+2026-07-09 16:48:09.624309: I Start experiment
+2026-07-09 16:48:09.796278: I C:\Users\shefai\Desktop\third_party recsys audit\third-party-recsys-audit_\elliot\data\lightgcn\training\gowalla\train.tsv - Loaded
+2026-07-09 16:48:09.875002: I Test Fold 0
+2026-07-09 16:48:20.452557: I Statistics	Users:	29858	Items:	40981	Transactions:	810128	Sparsity:	0.9993379201396946
+2026-07-09 16:48:28.320242: I Training begun for LightGCN
+
+2026-07-09 16:48:28.320242: I Hyperparameters:
+2026-07-09 16:48:28.321284: I meta set to namespace(save_recs=True)
+2026-07-09 16:48:28.322235: I lr set to 0.001
+2026-07-09 16:48:28.324234: I epochs set to 1
+2026-07-09 16:48:28.324234: I batch_size set to 2048
+2026-07-09 16:48:28.325235: I factors set to 64
+2026-07-09 16:48:28.325235: I l_w set to 0.0001
+2026-07-09 16:48:28.326237: I n_fold set to 1
+2026-07-09 16:48:28.327234: I Exploration: Test Fold exploration number 1
+2026-07-09 16:48:28.328235: I Exploration: Train-Validation Fold exploration number 1
+2026-07-09 16:49:41.938207: I 
+2026-07-09 16:49:41.985809: I Test Evaluation results
+2026-07-09 16:49:42.049270: I Cut-off: 10
+2026-07-09 16:49:42.191723: I Eval Time: 0.5881192684173584
+2026-07-09 16:49:42.270963: I Results
+2026-07-09 16:49:42.396645: I nDCG	0.08659
+2026-07-09 16:49:42.396645: I Recall	0.07891
+2026-07-09 16:49:42.575295: I 
+2026-07-09 16:49:42.577324: I Test Evaluation results
+2026-07-09 16:49:42.618330: I Cut-off: 20
+2026-07-09 16:49:42.668095: I Eval Time: 0.7305171489715576
+2026-07-09 16:49:42.684152: I Results
+2026-07-09 16:49:42.699155: I nDCG	0.09448
+2026-07-09 16:49:42.713093: I Recall	0.10942
+2026-07-09 16:49:44.642611: I Training ended for LightGCN
+2026-07-09 16:49:44.647429: I Loss:	-0.08659361276383992
+2026-07-09 16:49:44.647429: I Best Model params:	{'meta': namespace(save_recs=True), 'lr': 0.001, 'epochs': 1, 'batch_size': 2048, 'factors': 64, 'l_w': 0.0001, 'n_fold': 1, 'name': 'LightGCN_seed=42_e=1_bs=2048_lr=0$001_factors=64_l_w=0$0001_n_layers=1', 'best_iteration': 1}
+2026-07-09 16:49:44.647429: I Best Model results:	{10: {'nDCG': 0.08659361276383992, 'Recall': 0.07890522972049892}, 20: {'nDCG': 0.09448275049280301, 'Recall': 0.10942419396194189}}
+2026-07-09 16:49:44.769056: I End experiment
+2026-07-09 17:08:13.645631: I Start experiment
+2026-07-09 17:08:13.898043: I C:\Users\shefai\Desktop\third_party recsys audit\third-party-recsys-audit_\elliot\data\lightgcn\training\yelp2018\train.tsv - Loaded
+2026-07-09 17:08:14.123315: I Test Fold 0
+2026-07-09 17:08:30.107616: I Statistics	Users:	31668	Items:	38048	Transactions:	1237259	Sparsity:	0.9989731472928288
+2026-07-09 17:08:49.809616: I Start experiment
+2026-07-09 17:08:50.059993: I C:\Users\shefai\Desktop\third_party recsys audit\third-party-recsys-audit_\elliot\data\lightgcn\training\yelp2018\train.tsv - Loaded
+2026-07-09 17:08:50.280159: I Test Fold 0
+2026-07-09 17:09:11.764595: I Statistics	Users:	31668	Items:	38048	Transactions:	1237259	Sparsity:	0.9989731472928288
+2026-07-09 17:09:21.561400: I Training begun for LightGCN
+
+2026-07-09 17:09:21.577457: I Hyperparameters:
+2026-07-09 17:09:21.577457: I meta set to namespace(save_recs=True)
+2026-07-09 17:09:21.577457: I lr set to 0.001
+2026-07-09 17:09:21.577457: I epochs set to 1
+2026-07-09 17:09:21.577457: I batch_size set to 2048
+2026-07-09 17:09:21.577457: I factors set to 64
+2026-07-09 17:09:21.593241: I l_w set to 0.0001
+2026-07-09 17:09:21.594056: I n_fold set to 1
+2026-07-09 17:09:21.595083: I Exploration: Test Fold exploration number 1
+2026-07-09 17:09:21.596081: I Exploration: Train-Validation Fold exploration number 1
+2026-07-09 17:13:09.121983: I 
+2026-07-09 17:13:09.270760: I Test Evaluation results
+2026-07-09 17:13:09.372334: I Cut-off: 10
+2026-07-09 17:13:09.515650: I Eval Time: 1.208115816116333
+2026-07-09 17:13:09.607483: I Results
+2026-07-09 17:13:09.733668: I nDCG	0.02312
+2026-07-09 17:13:09.825903: I Recall	0.0194
+2026-07-09 17:13:10.798754: I 
+2026-07-09 17:13:10.799773: I Test Evaluation results
+2026-07-09 17:13:10.800648: I Cut-off: 20
+2026-07-09 17:13:10.809762: I Eval Time: 1.8029263019561768
+2026-07-09 17:13:10.809762: I Results
+2026-07-09 17:13:10.858016: I nDCG	0.02841
+2026-07-09 17:13:10.889848: I Recall	0.03401
+2026-07-09 17:13:17.029319: I Training ended for LightGCN
+2026-07-09 17:13:17.029319: I Loss:	-0.023119960195773125
+2026-07-09 17:13:17.045310: I Best Model params:	{'meta': namespace(save_recs=True), 'lr': 0.001, 'epochs': 1, 'batch_size': 2048, 'factors': 64, 'l_w': 0.0001, 'n_fold': 1, 'name': 'LightGCN_seed=42_e=1_bs=2048_lr=0$001_factors=64_l_w=0$0001_n_layers=1', 'best_iteration': 1}
+2026-07-09 17:13:17.045310: I Best Model results:	{10: {'nDCG': 0.023119960195773125, 'Recall': 0.01939525840894037}, 20: {'nDCG': 0.02840917663653743, 'Recall': 0.03400709165662191}}
+2026-07-09 17:13:17.061143: I End experiment
+2026-07-10 13:03:15.895650: I Start experiment
+2026-07-10 13:03:16.113103: I C:\Users\shefai\Desktop\third_party recsys audit\third-party-recsys-audit_\elliot\data\ngcf\training\gowalla\train.tsv - Loaded
+2026-07-10 13:03:16.192266: I Test Fold 0
+2026-07-10 13:03:26.610420: I Statistics	Users:	29858	Items:	40981	Transactions:	810128	Sparsity:	0.9993379201396946
+2026-07-10 13:03:35.932937: I Training begun for NGCF
+
+2026-07-10 13:03:35.936825: I Hyperparameters:
+2026-07-10 13:03:35.936825: I meta set to namespace(save_recs=True)
+2026-07-10 13:03:35.936825: I lr set to 0.0001
+2026-07-10 13:03:35.936825: I epochs set to 1
+2026-07-10 13:03:35.937374: I batch_size set to 256
+2026-07-10 13:03:35.937374: I factors set to 64
+2026-07-10 13:03:35.937374: I l_w set to 1e-05
+2026-07-10 13:03:35.938976: I node_dropout set to 0.1
+2026-07-10 13:03:35.938976: I message_dropout set to 0.1
+2026-07-10 13:03:35.939981: I n_fold set to 1
+2026-07-10 13:03:35.939981: I Exploration: Test Fold exploration number 1
+2026-07-10 13:03:35.939981: I Exploration: Train-Validation Fold exploration number 1
+2026-07-13 09:17:54.173391: I Start experiment
+2026-07-13 09:17:54.606483: I C:\Users\shefai\Desktop\third_party recsys audit\third-party-recsys-audit_\elliot\data\ngcf\training\gowalla\train.tsv - Loaded
+2026-07-13 09:17:54.744328: I Test Fold 0
+2026-07-13 09:18:13.272601: I Statistics	Users:	29858	Items:	40981	Transactions:	810128	Sparsity:	0.9993379201396946
+2026-07-13 09:18:50.131223: I Start experiment
+2026-07-13 09:18:50.405186: I C:\Users\shefai\Desktop\third_party recsys audit\third-party-recsys-audit_\elliot\data\lightgcn\tuning\gowalla\train.tsv - Loaded
+2026-07-13 09:18:50.691539: I Test Fold 0 - Validation Fold 0
+2026-07-13 09:19:03.197208: I Statistics	Users:	29860	Items:	72624	Transactions:	780271	Sparsity:	0.9996401881210502
+2026-07-13 09:20:31.832862: I Tuning begun for LightGCN
+

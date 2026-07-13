@@ -17,46 +17,60 @@ def change_data_elliot_format(_dict):
 
     return _df
 
+
+def read_data(path, split_name):
+    data_dict = {}
+
+    with open(path, "r") as f:
+        for line_num, raw_line in enumerate(f, start=1):
+            line = raw_line.strip()
+
+            if not line:
+                print(f"Empty line in {split_name} at line {line_num}")
+                continue
+
+            try:
+                parts = line.split()   # important: handles multiple spaces/tabs safely
+
+                uid = int(parts[0])
+                items = [int(i) for i in parts[1:]]
+
+                if len(items) == 0:
+                    print(f"User {uid} has no items in {split_name} at line {line_num}")
+                    continue
+
+                data_dict[uid] = items
+
+            except Exception as e:
+                print(f"Bad line in {split_name} at line {line_num}")
+                print(f"Raw line: {repr(raw_line)}")
+                print(f"Parsed parts: {parts if 'parts' in locals() else None}")
+                print(f"Error: {type(e).__name__}: {e}")
+                continue
+
+    return data_dict
+
 def training_data(path):
-    train_dict = dict()
+    train_dict = read_data(path, "training data")
+
+    new_train_dict = dict()
     valid_dict = dict()
-    try:
-        with open(path) as f:
-            for l in f.readlines():
-                if len(l) > 0:
-                    l = l.strip('\n').split(' ')
-                    if len(l) > 3:
 
-                        items_train = [int(i) for i in l[1:-1]]
-                        item_valid = [int(l[-1])]
-                        uid = int(l[0])
-                        train_dict[uid] = items_train
-                        valid_dict[uid] = item_valid
-                    else:
-                        items = [int(i) for i in l[1:]]
-                        uid = int(l[0])
-                        train_dict[uid] = items
+    for key, items_list in train_dict.items():
 
-    except:
-        print(f"A user do not have items in the training data {l}")
+        if len(items_list) > 1:
+            valid_dict[key] = [ items_list[-1] ]
+            new_train_dict[key] = items_list[:-1]
+        else:
+            new_train_dict[key] = items_list
+
     
-    train_df = change_data_elliot_format(train_dict)
+    train_df = change_data_elliot_format(new_train_dict)
     valid_df = change_data_elliot_format(valid_dict)
     return train_df, valid_df
 
 def testing_data(path):
-    test_dict = dict()
-    with open(path) as f:
-            for l in f.readlines():
-                try:
-                    if len(l) > 0:
-                        l = l.strip('\n').split(' ')
-                        items = [int(i) for i in l[1:]]
-                        uid = int(l[0])
-                        test_dict[uid] = items
-                except:
-                    print(f"A user do not have items in the test data {l}") 
-    
+    test_dict = read_data(path, "test data")
     test_df = change_data_elliot_format(test_dict)
     return test_df
 
