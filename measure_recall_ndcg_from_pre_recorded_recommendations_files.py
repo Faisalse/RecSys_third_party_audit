@@ -4,7 +4,7 @@ import pandas as pd
 from helper_functions import *
 
 parser = argparse.ArgumentParser()
-parser.add_argument("--model_name", type=str, default="elliot", help="original_ngcf, " \
+parser.add_argument("--model_name", type=str, default="recbole", help="original_ngcf, " \
 "original_lightgcn, daisyrec, recbole, elliot")
 parser.add_argument("--top_k", type=int, nargs="+", default=[20])
 args = parser.parse_args()
@@ -253,7 +253,7 @@ elif args.model_name == "recbole":
     formating2("YELP2018 FULL EVALUATION")
     calculate_recomm(recomm_file, args.top_k)
     line = "=" * 45
-
+    
     # AMAZON-BOOK
     path = "RecBole/results/with_reported_HP/LightGCN/amazon-book/"
     path = Path(path)
@@ -317,7 +317,7 @@ elif args.model_name == "recbole":
 
 
 elif args.model_name == "elliot":
-    #from prepare_data_for_elliot_HP_tuning import *
+    from prepare_data_for_elliot_training import *
     
     # GOWALLA
     model_name = "ELLIOT NGCF"

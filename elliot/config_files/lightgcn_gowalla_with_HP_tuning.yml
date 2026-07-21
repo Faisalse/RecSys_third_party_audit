@@ -1,5 +1,4 @@
 experiment:
-  path_output_rec_result: results/with_HP_tuning/lightgcn/gowalla/
   path_output_rec_performance: results/with_HP_tuning/lightgcn/gowalla/
 
   dataset: gowalla

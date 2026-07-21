@@ -65,7 +65,7 @@ def run_experiment(config_path: str = '', model_name = None, dataset_name = None
         config_file = yaml.load(f, Loader=yaml.SafeLoader)
     
     
-    save_time_memory_results_path = config_file["experiment"]["path_output_rec_result"] +"time_memory_complexity/"
+    save_time_memory_results_path = config_file["experiment"]["path_output_rec_performance"] +"time_memory_complexity/"
     save_time_memory_results_path = Path(save_time_memory_results_path)
     
     gc.collect()
@@ -165,17 +165,7 @@ def run_experiment(config_path: str = '', model_name = None, dataset_name = None
                 all_trials[key].append([single])
                 logger.info(f"Training ended for {model_class.__name__}")
             
-            time_memory_complexity_df = pd.DataFrame()
-            if torch.cuda.is_available():
-                peak_memory_bytes = torch.cuda.max_memory_allocated()
-                peak_memory_gb = peak_memory_bytes / 1024**3
-                time_memory_complexity_df["Memory usuage (GB)"] = [peak_memory_gb]
-                
-            train_complete = time.time() - start
-            time_memory_complexity_df["train_time (s)"] = [train_complete]
-            os.makedirs(save_time_memory_results_path, exist_ok=True)
-            file_name = str(test_fold_index)+"_time_memory_complexity.txt"
-            time_memory_complexity_df.to_csv(save_time_memory_results_path / file_name, index=False, sep = "\t")
+            
             
             
             
@@ -193,6 +183,18 @@ def run_experiment(config_path: str = '', model_name = None, dataset_name = None
         if isinstance(model_base, tuple):
             hyper_handler.add_trials(test_trials[min_val])
         all_trials[key] = all_trials[key][min_val]
+
+        time_memory_complexity_df = pd.DataFrame()
+        if torch.cuda.is_available():
+            peak_memory_bytes = torch.cuda.max_memory_allocated()
+            peak_memory_gb = peak_memory_bytes / 1024**3
+            time_memory_complexity_df["Memory usuage (GB)"] = [peak_memory_gb]
+                        
+        train_complete = time.time() - start
+        time_memory_complexity_df["train_time (s)"] = [train_complete]
+        os.makedirs(save_time_memory_results_path, exist_ok=True)
+        file_name = str(test_fold_index)+"_time_memory_complexity.txt"
+        time_memory_complexity_df.to_csv(save_time_memory_results_path / file_name, index=False, sep = "\t")
 
     # res_handler.save_results(output=base.base_namespace.path_output_rec_performance)
     hyper_handler.save_trials(output=base.base_namespace.path_output_rec_performance)

@@ -1,0 +1,35 @@
+[
+    {
+        "default_validation_metric": "nDCG",
+        "default_validation_cutoff": 10,
+        "rel_threshold": 0
+    },
+    {
+        "meta": {
+            "hyper_max_evals": 30,
+            "hyper_opt_alg": "tpe",
+            "validation_metric": "Recall@20",
+            "validation_rate": 1,
+            "verbose": true,
+            "save_recs": false
+        },
+        "recommender": "LightGCN_seed=42_e=1000_bs=2048_lr=0$0005_factors=64_l_w=1e-05_n_layers=3",
+        "configuration": {
+            "lr": 0.0005,
+            "epochs": 1000,
+            "batch_size": 2048,
+            "factors": 64,
+            "n_layers": 3,
+            "l_w": 1e-05,
+            "early_stopping": {
+                "patience": 10,
+                "monitor": "Recall@20",
+                "mode": "auto",
+                "verbose": true,
+                "min_delta": 0.001
+            },
+            "name": "LightGCN_seed=42_e=1000_bs=2048_lr=0$0005_factors=64_l_w=1e-05_n_layers=3",
+            "best_iteration": 190
+        }
+    }
+]
