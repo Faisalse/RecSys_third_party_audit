@@ -1,0 +1,48 @@
+experiment:
+  path_output_rec_performance: results/with_HP_tuning/ngcf/amazon-book/
+
+  dataset: amazon-book
+  backend: pytorch
+  
+  data_config:
+    strategy: fixed
+    train_path: ../data/ngcf/tuning/{0}/train.tsv
+    validation_path: ../data/ngcf/tuning/{0}/valid.tsv
+    test_path: ../data/ngcf/tuning/{0}/test.tsv
+
+  binarize: True
+  top_k: 50
+  
+  evaluation:
+    cutoffs: [10, 20]
+    simple_metrics: [nDCG, Recall]
+
+  external_models_path: ../external/models/__init__.py
+  gpu: 0
+
+  models:
+    external.NGCF:
+
+      meta:
+        hyper_max_evals: 30
+        hyper_opt_alg: tpe
+        validation_metric: Recall@20
+        validation_rate: 1
+        verbose: True
+        save_recs: True
+
+      lr: [0.01, 0.005, 0.001, 0.0005, 0.0001]
+      epochs: 200
+      batch_size: 2048
+      factors: [8, 16, 32, 64]
+      l_w: [0.00001, 0.0001, 0.001, 0.01]
+      node_dropout: [0.1, 0.2, 0.3]
+      message_dropout: [0.1, 0.2, 0.3]
+      n_layers: [1, 2, 3]
+
+      early_stopping:
+        patience: 10
+        monitor: Recall@20
+        mode: max
+        verbose: True
+        min_delta: 0.001
