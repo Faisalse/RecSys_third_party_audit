@@ -1,0 +1,44 @@
+optimization_metric: recall
+topk: 20
+hyperopt_trail: 1
+epochs: 1
+init_method: xavier_uniform
+loss_type: BPR
+hidden_size_list: [64, 64, 64]
+early_stop: True
+optimizer: adam
+cand_num: 30000 # if we use full sample size, then it creates CUDA memory error....
+
+sample_method: uniform
+sample_ratio: 0
+num_ng: 1
+
+tune_pack:
+  batch_size: [1024]
+  lr: [0.01, 0.005, 0.001, 0.0005, 0.0001]
+  factors: [8, 32, 64, 128]
+  num_ng: [1]
+  node_dropout: [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8]
+  mess_dropout: [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8]
+  reg_1: [0.00001, 0.0001, 0.001, 0.01, 0.1, 1, 10, 100]
+  reg_2: [0.00001, 0.0001, 0.001, 0.01, 0.1, 1, 10, 100]
+
+
+## NGCF Recommender Class ##
+## Parameters
+
+# user_num : int, the number of users
+# item_num : int, the number of items
+# factors : int, the number of latent factor
+# node_dropout: float, node dropout ratio
+# mess_dropout : float, messsage dropout rate
+# hidden_size_list : list, dimension structure of hidden layers, optional.
+# lr : float, learning rate
+# reg_1 : float, first-order regularization term
+# reg_2 : float, second-order regularization term
+# epochs : int, number of training epochs
+# loss_type : str, loss function type
+# gpuid : str, GPU ID
+# early_stop : bool, whether to activate early stop mechanism
+
+

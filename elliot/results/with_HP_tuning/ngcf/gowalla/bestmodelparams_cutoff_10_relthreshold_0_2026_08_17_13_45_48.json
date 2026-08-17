@@ -1,0 +1,37 @@
+[
+    {
+        "default_validation_metric": "nDCG",
+        "default_validation_cutoff": 10,
+        "rel_threshold": 0
+    },
+    {
+        "meta": {
+            "hyper_max_evals": 10,
+            "hyper_opt_alg": "tpe",
+            "validation_metric": "Recall@20",
+            "validation_rate": 1,
+            "verbose": true,
+            "save_recs": true
+        },
+        "recommender": "NGCF_seed=42_e=500_bs=2048_lr=0$0005_factors=64_l_w=0$0001_n_layers=3_weight_size=64_node_dropout=0$1_message_dropout=0$2",
+        "configuration": {
+            "lr": 0.0005,
+            "epochs": 500,
+            "batch_size": 2048,
+            "factors": 64,
+            "l_w": 0.0001,
+            "node_dropout": 0.1,
+            "message_dropout": 0.2,
+            "n_layers": 3,
+            "early_stopping": {
+                "patience": 10,
+                "monitor": "Recall@20",
+                "mode": "auto",
+                "verbose": true,
+                "min_delta": 0.001
+            },
+            "name": "NGCF_seed=42_e=500_bs=2048_lr=0$0005_factors=64_l_w=0$0001_n_layers=3_weight_size=64_node_dropout=0$1_message_dropout=0$2",
+            "best_iteration": 447
+        }
+    }
+]

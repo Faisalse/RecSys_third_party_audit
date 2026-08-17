@@ -78,6 +78,9 @@ if __name__ == '__main__':
     if config["cand_num"] == "full":
         config["cand_num"]  = len(  train_set["item"].unique() )
 
+
+
+
     init_logger(config)
     logger = getLogger()
     logger.info(config)

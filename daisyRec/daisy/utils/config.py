@@ -56,6 +56,42 @@ def init_config(param_dict=None):
         args = parse_args()
         algo_name = config['algo_name'] if args.algo_name is None else args.algo_name
         model_init_file = os.path.join(current_path, f'../assets/{algo_name}.yaml')
+
+        model_conf = yaml.load(
+            open(model_init_file), Loader=yaml.loader.SafeLoader)
+        if model_conf is not None:
+            config.update(model_conf)
+
+        args_conf = vars(args)
+
+        for k, v in config.items():
+            if k in args_conf.keys() and args_conf[k] is not None:
+                config[k] = args_conf[k]
+            else:
+                config[k] = v
+
+        if param_dict is not None:
+            config.update(param_dict)
+
+        return config
+
+def init_config_tuning(param_dict=None):
+        ''' 
+        summarize hyper-parameter part (basic yaml + args + model yaml) 
+        '''
+        config = dict()
+
+        current_path = os.path.dirname(os.path.realpath(__file__))
+        basic_init_file = os.path.join(current_path, '../assets/basic.yaml')
+        
+        basic_conf = yaml.load(open(basic_init_file), Loader=yaml.loader.SafeLoader)
+        config.update(basic_conf)
+
+        args = parse_args()
+        algo_name = config['algo_name'] if args.algo_name is None else args.algo_name
+        algo_name = algo_name+"_tuning"
+        model_init_file = os.path.join(current_path, f'../assets/{algo_name}.yaml')
+        
         model_conf = yaml.load(
             open(model_init_file), Loader=yaml.loader.SafeLoader)
         if model_conf is not None:

@@ -1,0 +1,11 @@
+model	nDCG	Recall
+NGCF_seed=42_e=500_bs=2048_lr=0$0005_factors=64_l_w=0$0001_n_layers=3_weight_size=64_node_dropout=0$1_message_dropout=0$2	0.09507989913724857	0.09318308082011914
+NGCF_seed=42_e=500_bs=2048_lr=0$0005_factors=64_l_w=0$01_n_layers=1_weight_size=64_node_dropout=0$3_message_dropout=0$2	0.0843002299945671	0.08320182205068205
+NGCF_seed=42_e=500_bs=2048_lr=0$01_factors=32_l_w=1e-05_n_layers=1_weight_size=64_node_dropout=0$1_message_dropout=0$1	0.04835677257251757	0.047949323204546944
+NGCF_seed=42_e=500_bs=2048_lr=0$005_factors=32_l_w=0$001_n_layers=2_weight_size=64_node_dropout=0$2_message_dropout=0$1	0.06326003285362666	0.06747075839882617
+NGCF_seed=42_e=500_bs=2048_lr=0$01_factors=16_l_w=1e-05_n_layers=2_weight_size=64_node_dropout=0$1_message_dropout=0$2	0.05090526920402116	0.05130286441087257
+NGCF_seed=42_e=500_bs=2048_lr=0$01_factors=16_l_w=0$001_n_layers=3_weight_size=64_node_dropout=0$3_message_dropout=0$2	0.04257743645826709	0.04502579104867654
+NGCF_seed=42_e=500_bs=2048_lr=0$0001_factors=8_l_w=1e-05_n_layers=3_weight_size=64_node_dropout=0$3_message_dropout=0$1	0.081057979275551	0.07833421710597228
+NGCF_seed=42_e=500_bs=2048_lr=0$0001_factors=32_l_w=1e-05_n_layers=1_weight_size=64_node_dropout=0$2_message_dropout=0$3	0.006462106748983961	0.006228504950868062
+NGCF_seed=42_e=500_bs=2048_lr=0$0005_factors=8_l_w=1e-05_n_layers=3_weight_size=64_node_dropout=0$1_message_dropout=0$2	0.08892447175041548	0.08424237501333624
+NGCF_seed=42_e=500_bs=2048_lr=0$001_factors=16_l_w=0$01_n_layers=1_weight_size=64_node_dropout=0$3_message_dropout=0$2	0.07707942041177153	0.07617025804915745
