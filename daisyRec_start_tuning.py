@@ -196,8 +196,6 @@ if __name__ == '__main__':
     line = ','.join(tune_param_names) + f',{kpi_name}'
     f.write(line + '\n')
     f.flush()
-
-
     if config['algo_name'] == "ngcf":
             path = "ngcf_data/"+"/"+config["dataset"]
             print(path)

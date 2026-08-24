@@ -7,7 +7,7 @@ algo_name: 'ngcf'
 rank_list_size_to_save: 50
 
 res_path: ~
-dataset: 'gowalla' # 
+dataset: 'amazon-book' #
 UID_NAME: user
 IID_NAME: item
 INTER_NAME: rating
