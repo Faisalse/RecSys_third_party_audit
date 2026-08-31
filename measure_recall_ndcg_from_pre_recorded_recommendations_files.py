@@ -4,7 +4,7 @@ import pandas as pd
 from helper_functions import *
 
 parser = argparse.ArgumentParser()
-parser.add_argument("--model_name", type=str, default="recbole", help="original_ngcf, " \
+parser.add_argument("--model_name", type=str, default="daisyrec", help="original_ngcf, " \
 "original_lightgcn, daisyrec, recbole, elliot")
 parser.add_argument("--top_k", type=int, nargs="+", default=[20])
 args = parser.parse_args()
@@ -63,11 +63,12 @@ elif args.model_name == "original_lightgcn":
 
 
 elif args.model_name == "daisyrec":
-
+    
     model_name = "daisyrec_ngcf"
     formating1(model_name)
+    
     # GOWALA_SAMPLE SIZE 100
-    path = "results/daisyrec/ngcf/gowalla/sampling_100/"
+    path = "results/daisyrec/ngcf/with_reported_HP/gowalla/sampling_100/"
     path = Path(path)
     recomm_file = pd.read_csv(path / "prediction_files.txt", sep = "\t")
     recomm_file["user_ground_truths"] = recomm_file["user_ground_turth"]
@@ -76,7 +77,7 @@ elif args.model_name == "daisyrec":
     calculate_recomm(recomm_file, args.top_k)
 
     # GOWALA_SAMPLE SIZE 500
-    path = "results/daisyrec/ngcf/gowalla/sampling_500/"
+    path = "results/daisyrec/ngcf/with_reported_HP/gowalla/sampling_500/"
     path = Path(path)
     recomm_file = pd.read_csv(path / "prediction_files.txt", sep = "\t")
     recomm_file["user_ground_truths"] = recomm_file["user_ground_turth"]
@@ -85,7 +86,7 @@ elif args.model_name == "daisyrec":
     calculate_recomm(recomm_file, args.top_k)
 
     # GOWALA_SAMPLE SIZE 1000
-    path = "results/daisyrec/ngcf/gowalla/sampling_1000/"
+    path = "results/daisyrec/ngcf/with_reported_HP/gowalla/sampling_1000/"
     path = Path(path)
     recomm_file = pd.read_csv(path / "prediction_files.txt", sep = "\t")
     recomm_file["user_ground_truths"] = recomm_file["user_ground_turth"]
@@ -94,7 +95,7 @@ elif args.model_name == "daisyrec":
     calculate_recomm(recomm_file, args.top_k)
 
     # GOWALA_SAMPLE SIZE 40981
-    path = "results/daisyrec/ngcf/gowalla/sampling_40981/"
+    path = "results/daisyrec/ngcf/with_reported_HP/gowalla/sampling_40981/"
     path = Path(path)
     recomm_file = pd.read_csv(path / "prediction_files.txt", sep = "\t")
     recomm_file["user_ground_truths"] = recomm_file["user_ground_turth"]
@@ -102,9 +103,21 @@ elif args.model_name == "daisyrec":
     formating2("GOWALLA FULL EVALUATION")
     calculate_recomm(recomm_file, args.top_k)
 
+    print("GOWALLA Hyperparameter tuning results")
+    path = "results/daisyrec/ngcf/with_hyperparameter_tuning/gowalla/sampling_30000/"
+    path = Path(path)
+    recomm_file = pd.read_csv(path / "prediction_files.txt", sep = "\t")
+    recomm_file["user_ground_truths"] = recomm_file["user_ground_turth"]
+    recomm_file["user_top_k_prediction"] = recomm_file["predictions"]
+    formating2("GOWALLA SAMPLE SIZE 30000")
+    calculate_recomm(recomm_file, args.top_k)
+    line = "=" * 45
+    print(line)
+
+
     ######################################################################
     # AMAZON-BOOK_SAMPLE SIZE 100
-    path = "results/daisyrec/ngcf/amazon-book/sampling_100/"
+    path = "results/daisyrec/ngcf/with_reported_HP/amazon-book/sampling_100/"
     path = Path(path)
     recomm_file = pd.read_csv(path / "prediction_files.txt", sep = "\t")
     recomm_file["user_ground_truths"] = recomm_file["user_ground_turth"]
@@ -113,7 +126,7 @@ elif args.model_name == "daisyrec":
     calculate_recomm(recomm_file, args.top_k)
     
     # AMAZON-BOOK_ SIZE 500
-    path = "results/daisyrec/ngcf/amazon-book/sampling_500/"
+    path = "results/daisyrec/ngcf/with_reported_HP/amazon-book/sampling_500/"
     path = Path(path)
     recomm_file = pd.read_csv(path / "prediction_files.txt", sep = "\t")
     recomm_file["user_ground_truths"] = recomm_file["user_ground_turth"]
@@ -122,7 +135,7 @@ elif args.model_name == "daisyrec":
     calculate_recomm(recomm_file, args.top_k)
 
     # AMAZON-BOOK_ SIZE 1000
-    path = "results/daisyrec/ngcf/amazon-book/sampling_1000/"
+    path = "results/daisyrec/ngcf/with_reported_HP/amazon-book/sampling_1000/"
     path = Path(path)
     recomm_file = pd.read_csv(path / "prediction_files.txt", sep = "\t")
     recomm_file["user_ground_truths"] = recomm_file["user_ground_turth"]
@@ -132,7 +145,7 @@ elif args.model_name == "daisyrec":
     
 
     # AMAZON-BOOK_ SIZE FULL evaluation
-    path = "results/daisyrec/ngcf/amazon-book/sampling_91599/"
+    path = "results/daisyrec/ngcf/with_reported_HP/amazon-book/sampling_91599/"
     path = Path(path)
     recomm_file = pd.read_csv(path / "prediction_files.txt", sep = "\t")
     recomm_file["user_ground_truths"] = recomm_file["user_ground_turth"]
@@ -141,7 +154,11 @@ elif args.model_name == "daisyrec":
     calculate_recomm(recomm_file, args.top_k)
     line = "=" * 45
     print(line)
+    
 
+    
+
+    """
     # LIGHTGCN MODEL
     model_name = "daisyrec_lightgcn"
     formating1(model_name)
@@ -212,7 +229,7 @@ elif args.model_name == "daisyrec":
     calculate_recomm(recomm_file, args.top_k)
     line = "=" * 45
     print(line)
-
+    """
 
 elif args.model_name == "recbole":
     print("^^^^^^^ RESULTS WITH REPORTED HYPERPARAMETERS ^^^^^^^^^^^^^")

@@ -1,0 +1,2 @@
+num_ng,factors,node_dropout,mess_dropout,batch_size,lr,reg_1,reg_2,recall
+1,128,0.4,0.0,2048,0.0001,10,0.1,0.0094
